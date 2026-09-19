@@ -1,0 +1,270 @@
+{
+  "media": {
+    "input": "assets/images",
+    "output": "/D/assets/images",
+    "extensions": [
+      "jpg",
+      "jpeg",
+      "png",
+      "webp",
+      "gif"
+    ],
+    "rename": "safe"
+  },
+  "content": [
+    {
+      "name": "portfolio",
+      "label": "Portfolio — save to publish",
+      "type": "file",
+      "path": "content/portfolio.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "openingNote",
+          "label": "Opening Note",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "aboutLabel",
+          "label": "About Label",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "aboutHeadline",
+          "label": "About Headline",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "workTitle",
+          "label": "Work Title",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "workNote",
+          "label": "Work Note",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "curatedTitle",
+          "label": "Curated Title",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "curatedNote",
+          "label": "Curated Note",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "cvTitle",
+          "label": "Cv Title",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "contactHeadline",
+          "label": "Contact Headline",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "contactNote",
+          "label": "Contact Note",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "copyright",
+          "label": "Copyright",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "footerNote",
+          "label": "Footer Note",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "gallery",
+          "label": "Gallery",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "c",
+              "label": "C",
+              "type": "string",
+              "hidden": true
+            },
+            {
+              "name": "title",
+              "label": "Title",
+              "type": "string"
+            },
+            {
+              "name": "img",
+              "label": "Img",
+              "type": "image"
+            },
+            {
+              "name": "alt",
+              "label": "Alt",
+              "type": "string"
+            },
+            {
+              "name": "href",
+              "label": "Href",
+              "type": "string",
+              "description": "Project anchor, for example #dda-globe"
+            }
+          ]
+        },
+        {
+          "name": "projects",
+          "label": "Projects",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "id",
+              "label": "Id",
+              "type": "string",
+              "readonly": true
+            },
+            {
+              "name": "kicker",
+              "label": "Kicker",
+              "type": "string"
+            },
+            {
+              "name": "title",
+              "label": "Title",
+              "type": "string"
+            },
+            {
+              "name": "caption",
+              "label": "Caption",
+              "type": "string"
+            },
+            {
+              "name": "img",
+              "label": "Img",
+              "type": "image"
+            },
+            {
+              "name": "body",
+              "label": "Body",
+              "type": "text"
+            },
+            {
+              "name": "points",
+              "label": "Points",
+              "type": "object",
+              "list": true,
+              "fields": [
+                {
+                  "name": "title",
+                  "label": "Title",
+                  "type": "string"
+                },
+                {
+                  "name": "detail",
+                  "label": "Detail",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "threads",
+          "label": "Threads",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "title",
+              "label": "Title",
+              "type": "string"
+            },
+            {
+              "name": "detail",
+              "label": "Detail",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "name": "cv",
+          "label": "Cv",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "title",
+              "label": "Title",
+              "type": "string"
+            },
+            {
+              "name": "detail",
+              "label": "Detail",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "name": "curated",
+          "label": "Curated",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "img",
+              "label": "Img",
+              "type": "image"
+            },
+            {
+              "name": "alt",
+              "label": "Alt",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "links",
+          "label": "Links",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "label",
+              "label": "Label",
+              "type": "string"
+            },
+            {
+              "name": "href",
+              "label": "Href",
+              "type": "string",
+              "pattern": {
+                "regex": "^(https?://|mailto:)",
+                "message": "Use an https:// or mailto: link."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "content": {
+      "merge": true
+    }
+  }
+}

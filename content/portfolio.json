@@ -1,0 +1,326 @@
+{
+  "gallery": [
+    {
+      "c": "1 / 1",
+      "img": "/D/assets/images/6d7de8acb27fe47e4181f4d4bb58c3a1.jpg",
+      "title": "DDA Globe",
+      "href": "#dda-globe",
+      "alt": "Green tiled low table on red spherical feet"
+    },
+    {
+      "c": "1 / 4",
+      "img": "/D/assets/images/08bd301b9ee1403841808c90d446efcf.jpg",
+      "title": "Digital stories",
+      "href": "#dda-stories",
+      "alt": "Floral mural being painted in an interior"
+    },
+    {
+      "c": "1 / 5",
+      "img": "/D/assets/images/1d54ac9ec49e14059cb9cb39020e64d6.jpg",
+      "title": "Collaboration",
+      "href": "#dda-collab",
+      "alt": "Ornate red and blue patterned interior"
+    },
+    {
+      "c": "1 / 8",
+      "img": "/D/assets/images/4bd2e075ca4e6a4a8341b44c7878d2f1.jpg",
+      "title": "Art & place",
+      "href": "#dda-place",
+      "alt": "Sculptural brass handles on dark doors"
+    },
+    {
+      "c": "2 / 1",
+      "img": "/D/assets/images/1ea0f0d2b3befe40c68bcb5ae44cda86.jpg",
+      "title": "Digital stories",
+      "href": "#dda-stories",
+      "alt": "Blue vaulted ceiling with gold stars"
+    },
+    {
+      "c": "2 / 2",
+      "img": "/D/assets/images/82d65d46ab8cc83f9b072d34a94b2397.jpg",
+      "title": "DDA Globe",
+      "href": "#dda-globe",
+      "alt": "Red tiled outdoor shower surrounded by greenery"
+    },
+    {
+      "c": "2 / 8",
+      "img": "/D/assets/images/69c9363fb292d1ca15c7289e2356b964.jpg",
+      "title": "Collaboration",
+      "href": "#dda-collab",
+      "alt": "Sculptural green and orange wall mounted seat"
+    },
+    {
+      "c": "2 / 9",
+      "img": "/D/assets/images/44f676b6fa27e9341fa1b402c49be582.jpg",
+      "title": "Art & place",
+      "href": "#dda-place",
+      "alt": "Stone bench beneath an arch with garden planting"
+    },
+    {
+      "c": "3 / 2",
+      "img": "/D/assets/images/82df26e7aa32096063817709e6494cca.jpg",
+      "title": "Digital stories",
+      "href": "#dda-stories",
+      "alt": "Ornate gold mosaics around an arched window"
+    },
+    {
+      "c": "4 / 1",
+      "img": "/D/assets/images/37abdf86a678be72e1daa8201f08235a.webp",
+      "title": "DDA Globe",
+      "href": "#dda-globe",
+      "alt": "Pale stone steps bordered by lush planting"
+    },
+    {
+      "c": "4 / 6",
+      "img": "/D/assets/images/1a22f5247a0348251fa2967b8efccb78.jpg",
+      "title": "Collaboration",
+      "href": "#dda-collab",
+      "alt": "Botanical mural across a wall"
+    },
+    {
+      "c": "4 / 9",
+      "img": "/D/assets/images/0f8fa7a27f0e143fbae6f3995ce63fb8.jpg",
+      "title": "Art & place",
+      "href": "#dda-place",
+      "alt": "Red tiled pool room with glowing round lights"
+    }
+  ],
+  "projects": [
+    {
+      "id": "dda-globe",
+      "kicker": "01 / Independent practice",
+      "title": "DDA Globe",
+      "img": "/D/assets/images/6d7de8acb27fe47e4181f4d4bb58c3a1.jpg",
+      "caption": "Visual reference / curated image",
+      "body": "Document Design Act is my independent creative practice. It grew from three ongoing Instagram blogs — a place for visual curiosity, curation and stories that connect words with images.",
+      "points": [
+        {
+          "title": "Visual Curation",
+          "detail": "Curated imagery across three active blogs."
+        },
+        {
+          "title": "Word & Image",
+          "detail": "Stories bridging text and photography."
+        }
+      ]
+    },
+    {
+      "id": "dda-stories",
+      "kicker": "02 / Digital storytelling",
+      "title": "Stories that make space for people",
+      "img": "/D/assets/images/08bd301b9ee1403841808c90d446efcf.jpg",
+      "caption": "Visual reference / curated image",
+      "body": "My digital storytelling work includes the University of Melbourne and galleries. I look for the human detail — the observation, voice or image that gives a story its meaning.",
+      "points": [
+        {
+          "title": "University of Melbourne",
+          "detail": "Institutional storytelling with a human lens."
+        },
+        {
+          "title": "Gallery Projects",
+          "detail": "Narratives shaped by art and audience."
+        }
+      ]
+    },
+    {
+      "id": "dda-collab",
+      "kicker": "03 / Creative collaboration",
+      "title": "A dialogue with design",
+      "img": "/D/assets/images/4bd2e075ca4e6a4a8341b44c7878d2f1.jpg",
+      "caption": "Visual reference / curated image",
+      "body": "Collaborations with international fashion and jewellery designers bring together my interests in identity, craft and visual storytelling.",
+      "points": [
+        {
+          "title": "Identity",
+          "detail": "Exploring how design expresses who we are."
+        },
+        {
+          "title": "Craft",
+          "detail": "The care and intention behind every detail."
+        },
+        {
+          "title": "Story",
+          "detail": "Visual narratives that linger beyond the image."
+        }
+      ]
+    },
+    {
+      "id": "dda-place",
+      "kicker": "04 / Art & place",
+      "title": "Beyond the screen",
+      "img": "/D/assets/images/37abdf86a678be72e1daa8201f08235a.webp",
+      "caption": "Visual reference / curated image",
+      "body": "A place for public art and installation projects — stories encountered in shared spaces, through colour, form and human connection.",
+      "points": [
+        {
+          "title": "Public Space",
+          "detail": "Art that belongs to everyone who passes through."
+        },
+        {
+          "title": "Colour & Form",
+          "detail": "Visual language that speaks without words."
+        },
+        {
+          "title": "Human Connection",
+          "detail": "Stories that emerge between people and place."
+        }
+      ]
+    }
+  ],
+  "threads": [
+    {
+      "title": "Paying Attention",
+      "detail": "I notice what people say — and what they leave unsaid. Those quiet human details are where the work begins."
+    },
+    {
+      "title": "Connecting Threads",
+      "detail": "Across independent creative work and government communications, I bring a rare dual perspective to every brief."
+    },
+    {
+      "title": "Chasing Warmth",
+      "detail": "I’m drawn to beauty that lingers and colour that moves us — the kind of feeling that stays long after the page turns."
+    }
+  ],
+  "cv": [
+    {
+      "title": "Independent Practice",
+      "detail": "DDA Globe / Document Design Act — ongoing creative practice spanning curation, writing and visual storytelling."
+    },
+    {
+      "title": "Communications & Storytelling",
+      "detail": "Experience across government, creative and cultural contexts — from agencies to institutions."
+    },
+    {
+      "title": "Education",
+      "detail": "Deakin University & VCA — qualification titles and dates to confirm."
+    },
+    {
+      "title": "Selected Recognition",
+      "detail": "Awards, grants and publication details to be added."
+    }
+  ],
+  "curated": [
+    {
+      "img": "/D/assets/images/08bd301b9ee1403841808c90d446efcf.jpg",
+      "alt": "Floral mural being painted in an interior"
+    },
+    {
+      "img": "/D/assets/images/0f8fa7a27f0e143fbae6f3995ce63fb8.jpg",
+      "alt": "Red tiled pool room with glowing round lights"
+    },
+    {
+      "img": "/D/assets/images/16dea0300f2ecec6aacd67f8e3808c23.jpg",
+      "alt": "Minimal interior with a dark timber counter"
+    },
+    {
+      "img": "/D/assets/images/1a22f5247a0348251fa2967b8efccb78.jpg",
+      "alt": "Botanical mural across a wall"
+    },
+    {
+      "img": "/D/assets/images/1d54ac9ec49e14059cb9cb39020e64d6.jpg",
+      "alt": "Ornate red and blue patterned interior"
+    },
+    {
+      "img": "/D/assets/images/1d59edddf3cc8901dc360101a5ea871a.jpg",
+      "alt": "Carved basin beside a wall light and greenery"
+    },
+    {
+      "img": "/D/assets/images/1ea0f0d2b3befe40c68bcb5ae44cda86.jpg",
+      "alt": "Blue vaulted ceiling with gold stars"
+    },
+    {
+      "img": "/D/assets/images/29c6aba9ad800e99189f2b7b1c1b8396.jpg",
+      "alt": "Aged mirrored wall panels"
+    },
+    {
+      "img": "/D/assets/images/37abdf86a678be72e1daa8201f08235a.webp",
+      "alt": "Pale stone steps bordered by lush planting"
+    },
+    {
+      "img": "/D/assets/images/3d036c53d1f0890632fe78f5d6cbbe6d.jpg",
+      "alt": "Plant filled courtyard beside an open doorway"
+    },
+    {
+      "img": "/D/assets/images/44f676b6fa27e9341fa1b402c49be582.jpg",
+      "alt": "Stone bench beneath an arch with garden planting"
+    },
+    {
+      "img": "/D/assets/images/4bd2e075ca4e6a4a8341b44c7878d2f1.jpg",
+      "alt": "Sculptural brass handles on dark doors"
+    },
+    {
+      "img": "/D/assets/images/59a12b3d9695829db78bca3b3866c17d.jpg",
+      "alt": "Marble wall mounted basin with brass taps"
+    },
+    {
+      "img": "/D/assets/images/61a0db62df9b39f5aa1d2d81d499d562.jpg",
+      "alt": "Weathered doorway and patterned stone floor"
+    },
+    {
+      "img": "/D/assets/images/69c9363fb292d1ca15c7289e2356b964.jpg",
+      "alt": "Sculptural green and orange wall mounted seat"
+    },
+    {
+      "img": "/D/assets/images/6d7de8acb27fe47e4181f4d4bb58c3a1.jpg",
+      "alt": "Green tiled low table on red spherical feet"
+    },
+    {
+      "img": "/D/assets/images/6f49bf0662e99ea7793ac71839ba66cf.jpg",
+      "alt": "Blue and gold patterned vaulted ceiling"
+    },
+    {
+      "img": "/D/assets/images/82d65d46ab8cc83f9b072d34a94b2397.jpg",
+      "alt": "Red tiled outdoor shower surrounded by greenery"
+    },
+    {
+      "img": "/D/assets/images/82df26e7aa32096063817709e6494cca.jpg",
+      "alt": "Ornate gold mosaics around an arched window"
+    },
+    {
+      "img": "/D/assets/images/9b298b497c16d4169391f9783897d331.jpg",
+      "alt": "White house with terracotta roofs and trees"
+    }
+  ],
+  "openingNote": "A living archive of images, colour and human detail from my practice.",
+  "aboutLabel": "About / A way of seeing",
+  "aboutHeadline": "Observing people.\nConnecting stories.\nMaking room for joy.",
+  "workTitle": "Selected work",
+  "workNote": "Four starting points.\nIndependent practice, digital storytelling, creative collaboration and art in public space.",
+  "curatedTitle": "Curatorial",
+  "curatedNote": "A moodboard of references —\ncolour, craft and detail I return to.",
+  "cvTitle": "A little background",
+  "contactHeadline": "Let’s make something\nthat stays.",
+  "contactNote": "For creative collaborations, agency opportunities and stories worth telling.",
+  "copyright": "© 2026 Derya Dilara",
+  "footerNote": "Words, images & human things.",
+  "links": [
+    {
+      "href": "mailto:dilara@deryadilara.com",
+      "label": "dilara@deryadilara.com"
+    },
+    {
+      "href": "https://www.deryadilara.com",
+      "label": "deryadilara.com"
+    },
+    {
+      "href": "https://www.bishbuckler.com",
+      "label": "bishbuckler.com"
+    },
+    {
+      "href": "https://instagram.com/_deryadilara_",
+      "label": "@_deryadilara_"
+    },
+    {
+      "href": "https://instagram.com/bishbuckler",
+      "label": "@bishbuckler"
+    },
+    {
+      "href": "https://instagram.com/mecmua__",
+      "label": "@mecmua__"
+    },
+    {
+      "href": "https://instagram.com/bondi.bish",
+      "label": "@bondi.bish"
+    }
+  ]
+}

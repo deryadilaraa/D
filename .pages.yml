@@ -20,26 +20,6 @@
       "format": "json",
       "fields": [
         {
-          "name": "heroTitle",
-          "label": "Opening title (one line per row)",
-          "type": "text"
-        },
-        {
-          "name": "heroSubtitle",
-          "label": "Opening subtitle",
-          "type": "string"
-        },
-        {
-          "name": "heroImage",
-          "label": "Opening background image",
-          "type": "image"
-        },
-        {
-          "name": "aboutIntro",
-          "label": "About introduction",
-          "type": "text"
-        },
-        {
           "name": "openingNote",
           "label": "Opening Note",
           "type": "text",

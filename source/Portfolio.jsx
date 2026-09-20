@@ -43,6 +43,47 @@ function DiagonalGallery({items}) {
   </div>;
 }
 
+function ProjectSpinner({projects}) {
+  const dialog = React.useRef(null), trigger = React.useRef(null), stage = React.useRef(null);
+  const [paused, setPaused] = React.useState(false), [visible, setVisible] = React.useState(false), [open, setOpen] = React.useState(false);
+  const pictures = projects.filter(project => project.img);
+  const cards = pictures.length ? Array.from({length: Math.max(8, pictures.length)}, (_, i) => pictures[i % pictures.length]) : [];
+  React.useEffect(() => {
+    if (!('IntersectionObserver' in window)) {setVisible(true); return;}
+    const observer = new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting));
+    if (stage.current) observer.observe(stage.current);
+    return () => observer.disconnect();
+  }, []);
+  React.useEffect(() => {
+    if (!open) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {document.body.style.overflow = previous;};
+  }, [open]);
+  const show = () => {dialog.current.showModal(); setOpen(true);};
+  const close = () => dialog.current.close();
+  const visit = (event, project) => {
+    event.preventDefault(); close();
+    requestAnimationFrame(() => document.getElementById(project.id)?.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'}));
+  };
+  return <div className="dda-project-spinner" ref={stage}>
+    <button ref={trigger} type="button" className="dda-spinner-open" onClick={show} aria-haspopup="dialog" aria-controls="dda-all-projects" aria-label="Open all projects">
+      <span className="dda-spinner-scene" aria-hidden="true"><span className="dda-spinner-axis"><span className="dda-spinner-wheel" style={{animationPlayState:paused || !visible || open?'paused':'running'}}>
+        {cards.map((project,i)=><span className="dda-spinner-card" key={i} style={{transform:`rotateX(${i * 360/cards.length}deg) translateY(-68px)`}}><img src={project.img} alt="" loading="lazy" draggable="false"/></span>)}
+      </span></span></span>
+      <span className="dda-spinner-label">All projects ({projects.length}) <span aria-hidden="true">↗</span></span>
+    </button>
+    {cards.length > 0 && <button type="button" className="dda-spinner-pause" aria-pressed={paused} onClick={()=>setPaused(!paused)}>{paused?'Resume rotation':'Pause rotation'}</button>}
+    <dialog ref={dialog} id="dda-all-projects" className="dda-project-dialog" aria-labelledby="dda-all-projects-title" onClose={()=>{setOpen(false);trigger.current?.focus({preventScroll:true});}} onClick={event=>{if(event.target===dialog.current){const rect=dialog.current.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)close();}}}>
+      <div className="dda-dialog-heading"><h2 id="dda-all-projects-title">All projects</h2><button type="button" onClick={close} autoFocus aria-label="Close all projects">Close ×</button></div>
+      <div className="dda-project-index">{projects.map(project=><a key={project.id} href={'#'+project.id} onClick={event=>visit(event,project)}>
+        {project.img && <img src={project.img} alt={project.title} loading="lazy"/>}
+        <p className="dda-index-kicker">{project.kicker}</p><h3>{project.title} <span aria-hidden="true">↗</span></h3>{project.caption && <p className="dda-index-caption">{project.caption}</p>}
+      </a>)}</div>
+    </dialog>
+  </div>;
+}
+
 function Portfolio({content}) {
  const {gallery:TILES,projects:PROJECTS,threads:THREADS,cv:CV,curated:CURATED}=content;
   const scrollTo = (e, href) => {
@@ -106,7 +147,7 @@ function Portfolio({content}) {
         </section>
 
         <section className="dda-work" id="dda-work">
-          <SectionHead title={content.workTitle} note={lines(content.workNote)} />
+          <div className="dda-work-intro"><SectionHead title={content.workTitle} note={lines(content.workNote)} /><ProjectSpinner projects={PROJECTS} /></div>
           {PROJECTS.map((p, i) => (
             <ProjectRow key={p.id} id={p.id} kicker={p.kicker} title={p.title}
               src={p.img} caption={p.caption} reverse={i % 2 === 1}>

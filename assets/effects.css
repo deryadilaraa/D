@@ -29,3 +29,34 @@
 @media(max-width:800px){#dda-portfolio .dda-name-opening{padding:28px 24px 44px}#dda-portfolio .dda-water-name{font-size:24vw;padding:0 5px}#dda-portfolio .dda-blogs{padding:0 24px 70px}#dda-portfolio .dda-blog-panels{gap:14px}#dda-portfolio .dda-blog-art{height:300px;border-top-left-radius:80px}#dda-portfolio .dda-blog-panel:nth-child(2) .dda-blog-art{border-top-right-radius:80px}#dda-portfolio .dda-blog-panel:nth-child(3) .dda-blog-art{border-top-left-radius:80px}#dda-portfolio .dda-blog-art>span{font-size:30px;padding:20px}#dda-portfolio .dda-diagonal-stage{height:500px}#dda-portfolio .dda-diagonal-card{width:245px;height:330px;left:calc(50% + var(--offset)*110px);top:calc(50% - var(--offset)*35px)}#dda-portfolio .dda-blogs>div:first-child{flex-wrap:wrap;gap:20px}}
 @media(max-width:520px){#dda-portfolio .dda-blog-panels{grid-template-columns:1fr;gap:34px}#dda-portfolio .dda-blog-art{height:370px}#dda-portfolio .dda-blog-art>span{font-size:48px;padding:38px}#dda-portfolio .dda-diagonal-stage{height:430px}#dda-portfolio .dda-diagonal-card{width:210px;height:285px;left:calc(50% + var(--offset)*95px);top:calc(50% - var(--offset)*30px)}#dda-portfolio .dda-project img{border-radius:22px}}
 @media(prefers-reduced-motion:reduce){#dda-portfolio .dda-water-name{filter:none}#dda-portfolio .dda-diagonal-card,#dda-portfolio .dda-blog-art img{transition:none}#dda-portfolio .dda-blog-panel:hover img{transform:none}}
+/* Clickable rotating project stack. */
+#dda-portfolio .dda-work-intro{display:grid;grid-template-columns:minmax(0,1fr) 330px;align-items:center;gap:60px;margin-bottom:40px}
+#dda-portfolio .dda-work-intro>div:first-child{display:block!important;border-bottom:0!important;margin:0!important;padding-bottom:0!important}
+#dda-portfolio .dda-work-intro>div:first-child>p{text-align:left!important;margin-top:24px!important;max-width:520px}
+#dda-portfolio .dda-project-spinner{text-align:center;min-width:0}
+#dda-portfolio .dda-spinner-open{display:block;width:100%;padding:0;border:0;background:transparent;color:var(--dda-ink);font:inherit;cursor:pointer}
+#dda-portfolio .dda-spinner-scene{display:block;height:330px;position:relative;perspective:950px;pointer-events:none}
+#dda-portfolio .dda-spinner-axis{position:absolute;left:50%;top:50%;width:190px;height:136px;transform:translate(-50%,-50%) rotateZ(-13deg) rotateY(-24deg);transform-style:preserve-3d}
+#dda-portfolio .dda-spinner-wheel{position:absolute;inset:0;transform-style:preserve-3d;animation:dda-project-twirl 22s linear infinite}
+#dda-portfolio .dda-spinner-card{display:block;position:absolute;inset:0;border-radius:7px;background:#eee;box-shadow:0 0 1px #0003;backface-visibility:visible;overflow:hidden}
+#dda-portfolio .dda-spinner-card img{width:100%;height:100%;object-fit:cover}
+#dda-portfolio .dda-spinner-label{display:flex;justify-content:center;gap:26px;font-size:14px;padding:12px 0}
+#dda-portfolio .dda-spinner-pause{border:0;background:none;font:inherit;font-size:11px;color:#626262;padding:8px 14px;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+#dda-portfolio .dda-spinner-open:focus-visible,#dda-portfolio .dda-spinner-pause:focus-visible{outline:2px solid #111;outline-offset:5px}
+#dda-portfolio .dda-spinner-open:hover .dda-spinner-wheel,#dda-portfolio .dda-spinner-open:focus-visible .dda-spinner-wheel{animation-play-state:paused!important}
+#dda-portfolio .dda-project-dialog{position:fixed;margin:auto;width:min(1120px,94vw);max-height:90svh;border:1px solid #ddd;border-radius:20px;padding:32px;background:#fff;color:#111;text-align:left;font-family:var(--dda-font-sans);overscroll-behavior:contain}
+#dda-portfolio .dda-project-dialog::backdrop{background:#0009}
+#dda-portfolio .dda-dialog-heading{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:30px}
+#dda-portfolio .dda-dialog-heading h2{font-family:var(--dda-font-serif);font-weight:400;font-size:48px;letter-spacing:-.025em}
+#dda-portfolio .dda-dialog-heading button{background:white;border:1px solid #111;border-radius:24px;padding:10px 18px;color:#111;font:inherit;font-size:13px;cursor:pointer}
+#dda-portfolio .dda-project-index{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 24px}
+#dda-portfolio .dda-project-index>a{display:block;color:inherit;text-decoration:none}
+#dda-portfolio .dda-project-index img{width:100%;height:240px;object-fit:cover;border-radius:18px}
+#dda-portfolio .dda-index-kicker{font-size:10px;text-transform:uppercase;letter-spacing:.08em;margin:15px 0 8px}
+#dda-portfolio .dda-project-index h3{font-family:var(--dda-font-serif);font-weight:400;font-size:30px;line-height:1.1;letter-spacing:-.02em}
+#dda-portfolio .dda-project-index h3 span{font-family:var(--dda-font-sans);font-size:20px}
+#dda-portfolio .dda-index-caption{font-size:10px;color:#626262;margin-top:10px}
+@keyframes dda-project-twirl{from{transform:rotateX(0deg)}to{transform:rotateX(360deg)}}
+@media(max-width:800px){#dda-portfolio .dda-work-intro{grid-template-columns:minmax(0,1fr) 260px;gap:24px}#dda-portfolio .dda-spinner-axis{width:160px;height:120px}#dda-portfolio .dda-spinner-scene{height:310px}}
+@media(max-width:580px){#dda-portfolio .dda-work-intro{grid-template-columns:1fr;gap:18px}#dda-portfolio .dda-project-spinner{max-width:330px;width:100%;margin:auto}#dda-portfolio .dda-project-dialog{padding:22px}#dda-portfolio .dda-dialog-heading h2{font-size:36px}#dda-portfolio .dda-project-index{grid-template-columns:1fr}#dda-portfolio .dda-project-index img{height:210px}}
+@media(prefers-reduced-motion:reduce){#dda-portfolio .dda-spinner-wheel{animation:none;transform:rotateX(18deg)}#dda-portfolio .dda-spinner-pause{display:none}}

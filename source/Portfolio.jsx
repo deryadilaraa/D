@@ -11,7 +11,7 @@ function Portfolio({content}) {
   return (
     <div id="dda-portfolio">
       <header className="dda-header" id="dda-top">
-        <a className="dda-brand" href="#dda-top" onClick={(e) => scrollTo(e, "#dda-top")}><Wordmark /></a>
+        <a className="dda-brand" href="#dda-top" onClick={(e) => scrollTo(e, "#dda-top")}><Wordmark text="DILARA" /></a>
         <Menu items={[
           { label: "Selected work", href: "#dda-work" },
           { label: "Curatorial", href: "#dda-curated" },

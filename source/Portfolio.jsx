@@ -2,31 +2,64 @@ const { Wordmark, Menu, Eyebrow, Note, TextLink, SectionHead, GalleryTile, Proje
 const lines = text => text.split('\n').map((line,i)=><React.Fragment key={i}>{i > 0 && <br />}{line}</React.Fragment>);
 const safeLink = href => /^(https?:\/\/|mailto:|#[a-zA-Z0-9_-]+$)/.test(href) ? href : '#dda-contact';
 function WaterName() {
-  const turbulence = React.useRef(null), displacement = React.useRef(null), frame = React.useRef(0), active = React.useRef(false), reduced = React.useRef(false);
+  const element = React.useRef(null), mapImage = React.useRef(null), displacement = React.useRef(null);
+  const engine = React.useRef(null);
   React.useEffect(() => {
+    const canvas = document.createElement('canvas'); canvas.width = 128; canvas.height = 64;
+    const context = canvas.getContext('2d');
+    if (!context) return;
+    const pixels = context.createImageData(canvas.width, canvas.height);
     const media = matchMedia('(prefers-reduced-motion: reduce)');
-    const update = () => { reduced.current = media.matches; if (media.matches) { active.current = false; cancelAnimationFrame(frame.current); frame.current = 0; displacement.current?.setAttribute('scale', '0'); } };
-    update(); media.addEventListener('change', update);
-    return () => {cancelAnimationFrame(frame.current); media.removeEventListener('change', update);};
-  }, []);
-  const enter = () => {
-    if (reduced.current) return;
-    active.current = true;
-    if (frame.current) return;
-    let strength = 0, start = performance.now();
-    const animate = time => {
-      strength += ((active.current ? 16 : 0) - strength) * .09;
-      const t = (time - start) / 1000;
-      turbulence.current?.setAttribute('baseFrequency', `${.006 + Math.sin(t * 1.2) * .002} ${.012 + Math.cos(t * 1.1) * .004}`);
-      displacement.current?.setAttribute('scale', strength.toFixed(2));
-      if (active.current || strength > .1) frame.current = requestAnimationFrame(animate);
-      else { displacement.current?.setAttribute('scale', '0'); frame.current = 0; }
+    const state = {points:[], last:null, frame:0, reduced:media.matches, time:0};
+    const reset = () => {cancelAnimationFrame(state.frame);state.frame=0;state.points=[];state.last=null;displacement.current?.setAttribute('scale','0');};
+    const render = time => {
+      const decay = Math.pow(.90, Math.min(3, (time - (state.time || time)) / 16.67)); state.time = time;
+      state.points.forEach(p=>{p.dx*=decay;p.dy*=decay;});
+      state.points=state.points.filter(p=>Math.hypot(p.dx,p.dy)>.04);
+      if (!state.points.length) {reset(); return;}
+      const rect=element.current.getBoundingClientRect();
+      const radius=Math.min(55,rect.height*.48);
+      for(let y=0;y<64;y++) for(let x=0;x<128;x++) {
+        let dx=0,dy=0;
+        for(const p of state.points) {
+          const distance=((x/127*rect.width-p.x)**2+(y/63*rect.height-p.y)**2)/(radius*radius);
+          if(distance>5)continue;
+          const weight=Math.exp(-distance*2);
+          dx+=p.dx*weight;dy+=p.dy*weight;
+        }
+        const i=(y*128+x)*4;
+        pixels.data[i]=Math.round(128-Math.max(-22,Math.min(22,dx))*255/64);
+        pixels.data[i+1]=Math.round(128-Math.max(-22,Math.min(22,dy))*255/64);
+        pixels.data[i+2]=128;pixels.data[i+3]=255;
+      }
+      context.putImageData(pixels,0,0);
+      mapImage.current?.setAttribute('href',canvas.toDataURL());
+      displacement.current?.setAttribute('scale','64');
+      state.frame=requestAnimationFrame(render);
     };
-    frame.current = requestAnimationFrame(animate);
-  };
+    state.move = event => {
+      if(state.reduced)return;
+      const rect=element.current.getBoundingClientRect(),x=event.clientX-rect.left,y=event.clientY-rect.top;
+      if(state.last){
+        const dx=Math.max(-14,Math.min(14,x-state.last.x)),dy=Math.max(-14,Math.min(14,y-state.last.y));
+        if(Math.hypot(dx,dy)>.2){
+          state.points.push({x,y,dx:dx*.85,dy:dy*.85});
+          if(state.points.length>14)state.points.shift();
+          if(!state.frame){state.time=performance.now();state.frame=requestAnimationFrame(render);}
+        }
+      }
+      state.last={x,y};
+    };
+    engine.current=state;
+    const update=()=>{state.reduced=media.matches;if(state.reduced)reset();};
+    media.addEventListener('change',update);
+    return ()=>{reset();engine.current=null;media.removeEventListener('change',update);};
+  }, []);
+  const move=event=>engine.current?.move(event);
+  const leave=()=>{if(engine.current)engine.current.last=null;};
   return <div className="dda-name-opening">
-    <svg className="dda-filter-defs" aria-hidden="true"><defs><filter id="dilara-water" x="-15%" y="-35%" width="130%" height="170%" colorInterpolationFilters="sRGB"><feTurbulence ref={turbulence} type="fractalNoise" baseFrequency=".011 .03" numOctaves="1" seed="5" result="water"/><feDisplacementMap ref={displacement} in="SourceGraphic" in2="water" scale="0" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg>
-    <a className="dda-water-name" href="#dda-about" aria-label="Dilara — about" onPointerEnter={enter} onPointerLeave={() => {active.current=false;}} onFocus={enter} onBlur={() => {active.current=false;}}>Dilara</a>
+    <svg className="dda-filter-defs" aria-hidden="true"><defs><filter id="folio-water" x="0" y="0" width="100%" height="100%" colorInterpolationFilters="sRGB"><feImage ref={mapImage} x="0" y="0" width="100%" height="100%" preserveAspectRatio="none" result="flow"/><feDisplacementMap ref={displacement} in="SourceGraphic" in2="flow" scale="0" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg>
+    <h2 className="dda-water-name" ref={element} onPointerEnter={move} onPointerDown={move} onPointerMove={move} onPointerLeave={leave} onPointerUp={leave} onPointerCancel={leave}>Folio</h2>
   </div>;
 }
 function DiagonalGallery({items}) {

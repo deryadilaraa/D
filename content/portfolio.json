@@ -2,87 +2,85 @@
   "gallery": [
     {
       "c": "1 / 1",
-      "img": "/D/assets/images/6d7de8acb27fe47e4181f4d4bb58c3a1.jpg",
-      "title": "DDA Globe",
-      "href": "#dda-globe",
-      "alt": "Green tiled low table on red spherical feet"
+      "title": "Mecmua - Mistik Muze",
+      "img": "/D/assets/images/1-untitled.png",
+      "alt": "Mecmua - Mistik Muze",
+      "href": "#Mecmua - Mistik Muze"
     },
     {
       "c": "1 / 4",
-      "img": "/D/assets/images/08bd301b9ee1403841808c90d446efcf.jpg",
-      "title": "Digital stories",
-      "href": "#dda-stories",
-      "alt": "Floral mural being painted in an interior"
+      "title": "Bish Bucker - Mr Bish Buckler",
+      "alt": "Bish Bucker - Mr Bish Buckler",
+      "href": "#Bish Bucker - Mr Bish Buckler"
     },
     {
       "c": "1 / 5",
-      "img": "/D/assets/images/1d54ac9ec49e14059cb9cb39020e64d6.jpg",
-      "title": "Collaboration",
-      "href": "#dda-collab",
-      "alt": "Ornate red and blue patterned interior"
+      "title": "Bondi Bish - For all the Bishes!",
+      "alt": "Bondi Bish - For all the Bishes!",
+      "href": "#Bondi Bish - For all the Bishes!"
     },
     {
       "c": "1 / 8",
+      "title": "Document. Design. Act.",
       "img": "/D/assets/images/4bd2e075ca4e6a4a8341b44c7878d2f1.jpg",
-      "title": "Art & place",
-      "href": "#dda-place",
-      "alt": "Sculptural brass handles on dark doors"
+      "alt": "Document. Design. Act.",
+      "href": "#Document. Design. Act."
     },
     {
       "c": "2 / 1",
+      "title": "But most of all, we need passion.",
       "img": "/D/assets/images/1ea0f0d2b3befe40c68bcb5ae44cda86.jpg",
-      "title": "Digital stories",
-      "href": "#dda-stories",
-      "alt": "Blue vaulted ceiling with gold stars"
+      "alt": "But most of all, we need passion.",
+      "href": "#But most of all, we need passion."
     },
     {
       "c": "2 / 2",
-      "img": "/D/assets/images/82d65d46ab8cc83f9b072d34a94b2397.jpg",
       "title": "DDA Globe",
-      "href": "#dda-globe",
-      "alt": "Red tiled outdoor shower surrounded by greenery"
+      "img": "/D/assets/images/82d65d46ab8cc83f9b072d34a94b2397.jpg",
+      "alt": "Red tiled outdoor shower surrounded by greenery",
+      "href": "#dda-globe"
     },
     {
       "c": "2 / 8",
-      "img": "/D/assets/images/69c9363fb292d1ca15c7289e2356b964.jpg",
       "title": "Collaboration",
-      "href": "#dda-collab",
-      "alt": "Sculptural green and orange wall mounted seat"
+      "img": "/D/assets/images/69c9363fb292d1ca15c7289e2356b964.jpg",
+      "alt": "Sculptural green and orange wall mounted seat",
+      "href": "#dda-collab"
     },
     {
       "c": "2 / 9",
-      "img": "/D/assets/images/44f676b6fa27e9341fa1b402c49be582.jpg",
       "title": "Art & place",
-      "href": "#dda-place",
-      "alt": "Stone bench beneath an arch with garden planting"
+      "img": "/D/assets/images/44f676b6fa27e9341fa1b402c49be582.jpg",
+      "alt": "Stone bench beneath an arch with garden planting",
+      "href": "#dda-place"
     },
     {
       "c": "3 / 2",
-      "img": "/D/assets/images/82df26e7aa32096063817709e6494cca.jpg",
       "title": "Digital stories",
-      "href": "#dda-stories",
-      "alt": "Ornate gold mosaics around an arched window"
+      "img": "/D/assets/images/82df26e7aa32096063817709e6494cca.jpg",
+      "alt": "Ornate gold mosaics around an arched window",
+      "href": "#dda-stories"
     },
     {
       "c": "4 / 1",
-      "img": "/D/assets/images/37abdf86a678be72e1daa8201f08235a.webp",
       "title": "DDA Globe",
-      "href": "#dda-globe",
-      "alt": "Pale stone steps bordered by lush planting"
+      "img": "/D/assets/images/37abdf86a678be72e1daa8201f08235a.webp",
+      "alt": "Pale stone steps bordered by lush planting",
+      "href": "#dda-globe"
     },
     {
       "c": "4 / 6",
-      "img": "/D/assets/images/1a22f5247a0348251fa2967b8efccb78.jpg",
       "title": "Collaboration",
-      "href": "#dda-collab",
-      "alt": "Botanical mural across a wall"
+      "img": "/D/assets/images/1a22f5247a0348251fa2967b8efccb78.jpg",
+      "alt": "Botanical mural across a wall",
+      "href": "#dda-collab"
     },
     {
       "c": "4 / 9",
-      "img": "/D/assets/images/0f8fa7a27f0e143fbae6f3995ce63fb8.jpg",
       "title": "Art & place",
-      "href": "#dda-place",
-      "alt": "Red tiled pool room with glowing round lights"
+      "img": "/D/assets/images/0f8fa7a27f0e143fbae6f3995ce63fb8.jpg",
+      "alt": "Red tiled pool room with glowing round lights",
+      "href": "#dda-place"
     }
   ],
   "projects": [
@@ -90,8 +88,8 @@
       "id": "dda-globe",
       "kicker": "01 / Independent practice",
       "title": "DDA Globe",
-      "img": "/D/assets/images/6d7de8acb27fe47e4181f4d4bb58c3a1.jpg",
       "caption": "Visual reference / curated image",
+      "img": "/D/assets/images/6d7de8acb27fe47e4181f4d4bb58c3a1.jpg",
       "body": "Document Design Act is my independent creative practice. It grew from three ongoing Instagram blogs — a place for visual curiosity, curation and stories that connect words with images.",
       "points": [
         {
@@ -108,8 +106,8 @@
       "id": "dda-stories",
       "kicker": "02 / Digital storytelling",
       "title": "Stories that make space for people",
-      "img": "/D/assets/images/08bd301b9ee1403841808c90d446efcf.jpg",
       "caption": "Visual reference / curated image",
+      "img": "/D/assets/images/08bd301b9ee1403841808c90d446efcf.jpg",
       "body": "My digital storytelling work includes the University of Melbourne and galleries. I look for the human detail — the observation, voice or image that gives a story its meaning.",
       "points": [
         {
@@ -126,8 +124,8 @@
       "id": "dda-collab",
       "kicker": "03 / Creative collaboration",
       "title": "A dialogue with design",
-      "img": "/D/assets/images/4bd2e075ca4e6a4a8341b44c7878d2f1.jpg",
       "caption": "Visual reference / curated image",
+      "img": "/D/assets/images/4bd2e075ca4e6a4a8341b44c7878d2f1.jpg",
       "body": "Collaborations with international fashion and jewellery designers bring together my interests in identity, craft and visual storytelling.",
       "points": [
         {
@@ -148,8 +146,8 @@
       "id": "dda-place",
       "kicker": "04 / Art & place",
       "title": "Beyond the screen",
-      "img": "/D/assets/images/37abdf86a678be72e1daa8201f08235a.webp",
       "caption": "Visual reference / curated image",
+      "img": "/D/assets/images/37abdf86a678be72e1daa8201f08235a.webp",
       "body": "A place for public art and installation projects — stories encountered in shared spaces, through colour, form and human connection.",
       "points": [
         {
@@ -281,46 +279,46 @@
       "alt": "White house with terracotta roofs and trees"
     }
   ],
-  "openingNote": "A living archive of images, colour and human detail from my practice.",
-  "aboutLabel": "About / A way of seeing",
-  "aboutHeadline": "Observing people.\nConnecting stories.\nMaking room for joy.",
-  "workTitle": "Selected work",
-  "workNote": "Four starting points.\nIndependent practice, digital storytelling, creative collaboration and art in public space.",
-  "curatedTitle": "Curatorial",
-  "curatedNote": "A moodboard of references —\ncolour, craft and detail I return to.",
-  "cvTitle": "A little background",
-  "contactHeadline": "Let’s make something\nthat stays.",
-  "contactNote": "For creative collaborations, agency opportunities and stories worth telling.",
-  "copyright": "© 2026 Derya Dilara",
-  "footerNote": "Words, images & human things.",
+  "openingNote": "But most of all, we need passion.",
+  "aboutLabel": "Summer soft, ocean deep.",
+  "aboutHeadline": "\"I prefer to be called Nobody.\" - Dead Man.",
+  "workTitle": "Your digital presence is your loudest whisper.",
+  "workNote": "\nMecmua - Mistik Muze\nBondi Bish - For all the Bishes!\nBish Bucker - Mr Bish Buckler\n",
+  "curatedTitle": "There is immense power in beauty.",
+  "curatedNote": "I am a mood based person.",
+  "cvTitle": "Document. Design. Act.",
+  "contactHeadline": "Every picture tells a story.",
+  "contactNote": "Connect for stories worth telling.",
+  "copyright": "© 2028 Dilara",
+  "footerNote": "it's a dilara",
   "links": [
     {
-      "href": "mailto:dilara@deryadilara.com",
-      "label": "dilara@deryadilara.com"
+      "label": "dilara@deryadilara.com",
+      "href": "mailto:dilara@deryadilara.com"
     },
     {
-      "href": "https://www.deryadilara.com",
-      "label": "deryadilara.com"
+      "label": "deryadilara.com",
+      "href": "https://www.deryadilara.com"
     },
     {
-      "href": "https://www.bishbuckler.com",
-      "label": "bishbuckler.com"
+      "label": "bishbuckler.com",
+      "href": "https://www.bishbuckler.com"
     },
     {
-      "href": "https://instagram.com/_deryadilara_",
-      "label": "@_deryadilara_"
+      "label": "@_deryadilara_",
+      "href": "https://instagram.com/_deryadilara_"
     },
     {
-      "href": "https://instagram.com/bishbuckler",
-      "label": "@bishbuckler"
+      "label": "@bishbuckler",
+      "href": "https://instagram.com/bishbuckler"
     },
     {
-      "href": "https://instagram.com/mecmua__",
-      "label": "@mecmua__"
+      "label": "@mecmua__",
+      "href": "https://instagram.com/mecmua__"
     },
     {
-      "href": "https://instagram.com/bondi.bish",
-      "label": "@bondi.bish"
+      "label": "@bondi.bish",
+      "href": "https://instagram.com/bondi.bish"
     }
   ]
 }

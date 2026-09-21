@@ -1,0 +1,62 @@
+/* Additive effects only: retain the existing fonts, palette and text styles. */
+#dda-portfolio .dda-name-opening{padding:22px 40px 34px;overflow:hidden}
+#dda-portfolio .dda-filter-defs{position:absolute;width:0;height:0;pointer-events:none}
+#dda-portfolio .dda-water-name{display:inline-block;font-family:var(--dda-font-serif);font-weight:400;font-size:clamp(64px,8vw,112px);letter-spacing:-.045em;line-height:1.1;text-decoration:none;color:var(--dda-ink);filter:url(#folio-water);padding:12px 18px;touch-action:pan-y;user-select:none}
+#dda-portfolio .dda-blogs{padding:0 40px 110px;max-width:1440px;margin:auto}
+#dda-portfolio .dda-blog-panels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:42px}
+#dda-portfolio .dda-blog-panel{display:block;text-decoration:none;color:inherit;min-width:0}
+#dda-portfolio .dda-blog-art{height:clamp(280px,35vw,480px);overflow:hidden;border-radius:140px 0 0 0;background:#f1f1f1;display:flex;align-items:center;justify-content:center}
+#dda-portfolio .dda-blog-panel:nth-child(2) .dda-blog-art{border-radius:0 140px 0 0;background:#111;color:#fff}
+#dda-portfolio .dda-blog-panel:nth-child(3) .dda-blog-art{border-radius:140px 0 0 0;background:#ededed}
+#dda-portfolio .dda-blog-art img{height:100%;width:100%;object-fit:cover;transition:transform .5s ease}
+#dda-portfolio .dda-blog-art>span{font-family:var(--dda-font-serif);font-size:clamp(32px,3.6vw,56px);line-height:1.08;letter-spacing:-.025em;padding:40px;overflow-wrap:anywhere}
+#dda-portfolio .dda-blog-panel:hover img{transform:scale(1.035)}
+#dda-portfolio .dda-blog-label{display:flex;justify-content:space-between;gap:16px;font-size:13px;margin-top:18px}
+#dda-portfolio .dda-project img{border-radius:28px}
+#dda-portfolio .dda-diagonal{margin-top:42px;overflow:hidden}
+#dda-portfolio .dda-diagonal-stage{position:relative;height:620px;overflow:hidden;touch-action:pan-y}
+#dda-portfolio .dda-diagonal-card{position:absolute;left:calc(50% + var(--offset)*155px);top:calc(50% - var(--offset)*48px);width:310px;height:400px;border:0;padding:0;border-radius:16px;overflow:hidden;background:#eee;cursor:pointer;transform:translate(-50%,-50%) perspective(1100px) rotateY(-42deg) rotateZ(10deg);transition:left .7s cubic-bezier(.2,.7,.2,1),top .7s cubic-bezier(.2,.7,.2,1),filter .3s;box-shadow:0 8px 24px #00000012}
+#dda-portfolio .dda-diagonal-card img{width:100%;height:100%;object-fit:cover;pointer-events:none}
+#dda-portfolio .dda-diagonal-card:hover{filter:brightness(1.08)}
+#dda-portfolio .dda-diagonal-card:focus-visible{outline:3px solid #111;outline-offset:6px}
+#dda-portfolio .dda-diagonal-controls{display:flex;align-items:center;justify-content:space-between;gap:30px;padding:12px 0 18px;border-bottom:1px solid #ddd}
+#dda-portfolio .dda-diagonal-caption{font-size:12px;line-height:1.5}
+#dda-portfolio .dda-diagonal-caption span{display:block;color:#626262;margin-top:6px}
+#dda-portfolio .dda-diagonal-controls>div{display:flex;gap:10px}
+#dda-portfolio .dda-diagonal-controls button{width:48px;height:48px;border:1px solid #111;border-radius:50%;background:white;color:#111;font-size:22px;cursor:pointer}
+#dda-portfolio .dda-diagonal-controls button:disabled{opacity:.3;cursor:default}
+#dda-portfolio .dda-gallery-range{display:block;width:100%;accent-color:#111;margin:24px 0 0;cursor:pointer}
+@media(max-width:800px){#dda-portfolio .dda-name-opening{padding:16px 24px 28px}#dda-portfolio .dda-water-name{font-size:clamp(64px,14vw,100px);padding:12px 14px}#dda-portfolio .dda-blogs{padding:0 24px 70px}#dda-portfolio .dda-blog-panels{gap:14px}#dda-portfolio .dda-blog-art{height:300px;border-top-left-radius:80px}#dda-portfolio .dda-blog-panel:nth-child(2) .dda-blog-art{border-top-right-radius:80px}#dda-portfolio .dda-blog-panel:nth-child(3) .dda-blog-art{border-top-left-radius:80px}#dda-portfolio .dda-blog-art>span{font-size:30px;padding:20px}#dda-portfolio .dda-diagonal-stage{height:500px}#dda-portfolio .dda-diagonal-card{width:245px;height:330px;left:calc(50% + var(--offset)*110px);top:calc(50% - var(--offset)*35px)}#dda-portfolio .dda-blogs>div:first-child{flex-wrap:wrap;gap:20px}}
+@media(max-width:520px){#dda-portfolio .dda-blog-panels{grid-template-columns:1fr;gap:34px}#dda-portfolio .dda-blog-art{height:370px}#dda-portfolio .dda-blog-art>span{font-size:48px;padding:38px}#dda-portfolio .dda-diagonal-stage{height:430px}#dda-portfolio .dda-diagonal-card{width:210px;height:285px;left:calc(50% + var(--offset)*95px);top:calc(50% - var(--offset)*30px)}#dda-portfolio .dda-project img{border-radius:22px}}
+@media(prefers-reduced-motion:reduce){#dda-portfolio .dda-water-name{filter:none}#dda-portfolio .dda-diagonal-card,#dda-portfolio .dda-blog-art img{transition:none}#dda-portfolio .dda-blog-panel:hover img{transform:none}}
+/* Clickable rotating project stack. */
+#dda-portfolio .dda-work-intro{display:grid;grid-template-columns:minmax(0,1fr) 330px;align-items:center;gap:60px;margin-bottom:40px}
+#dda-portfolio .dda-work-intro>div:first-child{display:block!important;border-bottom:0!important;margin:0!important;padding-bottom:0!important}
+#dda-portfolio .dda-work-intro>div:first-child>p{text-align:left!important;margin-top:24px!important;max-width:520px}
+#dda-portfolio .dda-project-spinner{text-align:center;min-width:0}
+#dda-portfolio .dda-spinner-open{display:block;width:100%;padding:0;border:0;background:transparent;color:var(--dda-ink);font:inherit;cursor:pointer}
+#dda-portfolio .dda-spinner-scene{display:block;height:330px;position:relative;perspective:950px;pointer-events:none}
+#dda-portfolio .dda-spinner-axis{position:absolute;left:50%;top:50%;width:190px;height:136px;transform:translate(-50%,-50%) rotateZ(-13deg) rotateY(-24deg);transform-style:preserve-3d}
+#dda-portfolio .dda-spinner-wheel{position:absolute;inset:0;transform-style:preserve-3d;animation:dda-project-twirl 22s linear infinite}
+#dda-portfolio .dda-spinner-card{display:block;position:absolute;inset:0;border-radius:7px;background:#eee;box-shadow:0 0 1px #0003;backface-visibility:visible;overflow:hidden}
+#dda-portfolio .dda-spinner-card img{width:100%;height:100%;object-fit:cover}
+#dda-portfolio .dda-spinner-label{display:flex;justify-content:center;gap:26px;font-size:14px;padding:12px 0}
+#dda-portfolio .dda-spinner-pause{border:0;background:none;font:inherit;font-size:11px;color:#626262;padding:8px 14px;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+#dda-portfolio .dda-spinner-open:focus-visible,#dda-portfolio .dda-spinner-pause:focus-visible{outline:2px solid #111;outline-offset:5px}
+#dda-portfolio .dda-spinner-open:hover .dda-spinner-wheel,#dda-portfolio .dda-spinner-open:focus-visible .dda-spinner-wheel{animation-play-state:paused!important}
+#dda-portfolio .dda-project-dialog{position:fixed;margin:auto;width:min(1120px,94vw);max-height:90svh;border:1px solid #ddd;border-radius:20px;padding:32px;background:#fff;color:#111;text-align:left;font-family:var(--dda-font-sans);overscroll-behavior:contain}
+#dda-portfolio .dda-project-dialog::backdrop{background:#0009}
+#dda-portfolio .dda-dialog-heading{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:30px}
+#dda-portfolio .dda-dialog-heading h2{font-family:var(--dda-font-serif);font-weight:400;font-size:48px;letter-spacing:-.025em}
+#dda-portfolio .dda-dialog-heading button{background:white;border:1px solid #111;border-radius:24px;padding:10px 18px;color:#111;font:inherit;font-size:13px;cursor:pointer}
+#dda-portfolio .dda-project-index{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 24px}
+#dda-portfolio .dda-project-index>a{display:block;color:inherit;text-decoration:none}
+#dda-portfolio .dda-project-index img{width:100%;height:240px;object-fit:cover;border-radius:18px}
+#dda-portfolio .dda-index-kicker{font-size:10px;text-transform:uppercase;letter-spacing:.08em;margin:15px 0 8px}
+#dda-portfolio .dda-project-index h3{font-family:var(--dda-font-serif);font-weight:400;font-size:30px;line-height:1.1;letter-spacing:-.02em}
+#dda-portfolio .dda-project-index h3 span{font-family:var(--dda-font-sans);font-size:20px}
+#dda-portfolio .dda-index-caption{font-size:10px;color:#626262;margin-top:10px}
+@keyframes dda-project-twirl{from{transform:rotateX(0deg)}to{transform:rotateX(360deg)}}
+@media(max-width:800px){#dda-portfolio .dda-work-intro{grid-template-columns:minmax(0,1fr) 260px;gap:24px}#dda-portfolio .dda-spinner-axis{width:160px;height:120px}#dda-portfolio .dda-spinner-scene{height:310px}}
+@media(max-width:580px){#dda-portfolio .dda-work-intro{grid-template-columns:1fr;gap:18px}#dda-portfolio .dda-project-spinner{max-width:330px;width:100%;margin:auto}#dda-portfolio .dda-project-dialog{padding:22px}#dda-portfolio .dda-dialog-heading h2{font-size:36px}#dda-portfolio .dda-project-index{grid-template-columns:1fr}#dda-portfolio .dda-project-index img{height:210px}}
+@media(prefers-reduced-motion:reduce){#dda-portfolio .dda-spinner-wheel{animation:none;transform:rotateX(18deg)}#dda-portfolio .dda-spinner-pause{display:none}}

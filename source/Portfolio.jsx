@@ -117,6 +117,29 @@ function ProjectSpinner({projects}) {
   </div>;
 }
 
+function Services({links}) {
+  const email = links.find(link => link.href.startsWith('mailto:'))?.href;
+  const packages = [
+    {title:'Career Story / Creative Portfolio',price:'650',featured:true,description:'Your experience, beautifully told. A one-page creative portfolio that turns your CV into a clear, personal narrative.',items:['Introductory call and up to 600 words of CV-to-web storytelling','Image selection, up to six sections and three featured projects','Mobile layout, contact links and a downloadable CV link']},
+    {title:'Simple Landing Page',price:'350',description:'A considered home for your work, service or next idea.',items:['One scrolling page with up to four sections','Your supplied words and images, with light editing','Mobile layout and contact links']},
+    {title:'Editorial & Visual Refresh',price:'250',description:'A fresh eye on the words, images and flow of your existing one-page website.',items:['Editing and refinement of existing copy','Selection and sequencing of your supplied images','Layout refinements within your existing website']},
+    {title:'Digital Curation',price:'200',description:'Bring your images together into a coherent visual story.',items:['Selection of up to 15 client-supplied images','Suggested sequence and short captions','A curated selection for your website or digital publication']}
+  ];
+  return <section className="dda-services" id="dda-services" aria-labelledby="dda-services-title">
+    <Eyebrow>Creative & curatorial services</Eyebrow>
+    <h2 id="dda-services-title">Your experience,<br/>beautifully told.</h2>
+    <p className="dda-services-intro">Words, images and an editorial eye. Personal websites, career stories and digital curation, shaped around what makes your work yours.</p>
+    <div className="dda-service-grid">{packages.map(service => <article key={service.title} className={'dda-service-card'+(service.featured?' dda-service-featured':'')}>
+      <div className="dda-service-top"><h3>{service.title}</h3><p className="dda-service-price">${service.price}<span>AUD · one-off</span></p></div>
+      {service.featured && <p className="dda-service-offer">Introductory offer: $495 AUD for the first three clients.</p>}
+      <p>{service.description}</p>
+      <ul>{service.items.map(item=><li key={item}>{item}</li>)}</ul>
+      <a className="dda-service-enquiry" href={email ? email.split('?')[0]+'?subject='+encodeURIComponent('Enquiry: '+service.title) : '#dda-contact'}>Enquire about {service.featured?'a Career Story':service.title.toLowerCase()} <span aria-hidden="true">↗</span></a>
+    </article>)}</div>
+    <div className="dda-service-details"><p>Each package includes one consolidated revision round. Website builds use an established layout personalised through typography, colour, imagery and storytelling. You supply your CV or project information and images.</p><p>Domain, hosting and paid template costs are separate, with accounts in your name. Additional writing, custom animation, branding and extra pages are quoted separately. A 50% deposit books the project; the balance is due before launch or final delivery.</p></div>
+  </section>;
+}
+
 function Portfolio({content}) {
  const {gallery:TILES,projects:PROJECTS,threads:THREADS,cv:CV,curated:CURATED}=content;
   const scrollTo = (e, href) => {
@@ -132,6 +155,7 @@ function Portfolio({content}) {
           { label: "Selected work", href: "#dda-work" },
           { label: "Curatorial", href: "#dda-curated" },
           { label: "About", href: "#dda-about" },
+          { label: "Services", href: "#dda-services" },
           { label: "CV", href: "#dda-cv" },
           { label: "Contact", href: "#dda-contact" },
         ]} />
@@ -208,6 +232,8 @@ function Portfolio({content}) {
             <CVList items={CV} />
           </div>
         </section>
+
+        <Services links={content.links} />
 
         <section className="dda-contact" id="dda-contact">
           <Eyebrow>Contact</Eyebrow>

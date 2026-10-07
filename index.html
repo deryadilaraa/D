@@ -1,6 +1,6 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dilara</title>
-<link rel="icon" type="image/svg+xml" href="./assets/signature-favicon.svg?v=2">
+<link rel="icon" type="image/svg+xml" href="https://deryadilaraa.github.io/D/assets/signature-favicon.svg?v=2">
 <style>/* ============================================================
    Derya Dilara — Design System
    Global entry point. Consumers link this ONE file.
@@ -9,14 +9,14 @@
 /* Derya Dilara — webfonts. Instrument Sans + Instrument Serif (SIL OFL, licenses in assets/fonts/). */
 @font-face{
   font-family:"Instrument Sans";
-  src:url("./assets/InstrumentSans.ttf") format("truetype");
+  src:url("https://deryadilaraa.github.io/D/assets/InstrumentSans.ttf") format("truetype");
   font-weight:400 700;
   font-style:normal;
   font-display:swap;
 }
 @font-face{
   font-family:"Instrument Serif";
-  src:url("./assets/InstrumentSerif-Regular.ttf") format("truetype");
+  src:url("https://deryadilaraa.github.io/D/assets/InstrumentSerif-Regular.ttf") format("truetype");
   font-weight:400;
   font-style:normal;
   font-display:swap;
@@ -244,18 +244,1394 @@ html,body{margin:0;background:#fff}
 #dda-portfolio .dda-cv{padding:64px 24px}
 }
 </style>
-<link rel="stylesheet" href="./assets/effects.css?v=3">
-<link rel="stylesheet" href="./assets/services.css?v=1">
+<link rel="stylesheet" href="https://deryadilaraa.github.io/D/assets/effects.css?v=3">
+<link rel="stylesheet" href="https://deryadilaraa.github.io/D/assets/services.css?v=1">
 </head>
-<body>
+<body class="" style="">
 <div id="root"></div>
 
 
 
 
-<script src="./assets/react.js"></script>
-<script src="./assets/react-dom.js"></script>
-<script src="./assets/components.js"></script>
-<script src="./assets/portfolio.js?v=services-1"></script>
-<script>fetch('./content/portfolio.json', {cache:'no-cache'}).then(response => {if (!response.ok) throw new Error('Content unavailable'); return response.json();}).then(content => ReactDOM.createRoot(document.getElementById("root")).render(React.createElement(window.Portfolio, {content}))).catch(() => {document.getElementById('root').textContent = 'The portfolio could not load. Please refresh to try again.';});</script>
+<script src="https://deryadilaraa.github.io/D/assets/react.js"></script>
+<script src="https://deryadilaraa.github.io/D/assets/react-dom.js"></script>
+<script>/* @ds-bundle: {"format":4,"namespace":"DeryaDilaraDesignSystem_f49e04","components":[{"name":"TextLink","sourcePath":"components/actions/TextLink.jsx"},{"name":"Wordmark","sourcePath":"components/brand/Wordmark.jsx"},{"name":"CVList","sourcePath":"components/content/CVList.jsx"},{"name":"GalleryTile","sourcePath":"components/content/GalleryTile.jsx"},{"name":"ProjectRow","sourcePath":"components/content/ProjectRow.jsx"},{"name":"SectionHead","sourcePath":"components/content/SectionHead.jsx"},{"name":"Menu","sourcePath":"components/navigation/Menu.jsx"},{"name":"Eyebrow","sourcePath":"components/text/Eyebrow.jsx"},{"name":"Note","sourcePath":"components/text/Note.jsx"}],"sourceHashes":{"components/actions/TextLink.jsx":"04127b97b224","components/brand/Wordmark.jsx":"7381083778f1","components/content/CVList.jsx":"85ab676ee657","components/content/GalleryTile.jsx":"b927e8a83167","components/content/ProjectRow.jsx":"c6aa0fb01f49","components/content/SectionHead.jsx":"c5730e5b3d85","components/navigation/Menu.jsx":"67a8e6764009","components/text/Eyebrow.jsx":"cacb7db19ea1","components/text/Note.jsx":"e5bf9dadd7f7","ui_kits/portfolio/Portfolio.jsx":"240e14cd3b5f"},"inlinedExternals":[],"unexposedExports":[]} */
+
+(() => {
+
+const __ds_ns = (window.DeryaDilaraDesignSystem_f49e04 = window.DeryaDilaraDesignSystem_f49e04 || {});
+
+const __ds_scope = {};
+
+(__ds_ns.__errors = __ds_ns.__errors || []);
+
+// components/actions/TextLink.jsx
+try { (() => {
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+const GLYPH = {
+  "up-right": " ↗",
+  "up": " ↑",
+  "down": " ↓",
+  true: " ↗"
+};
+
+/**
+ * TextLink — the portfolio's only link style: inherits ink, no underline
+ * at rest, underline (offset 4px) on hover. Optional directional arrow.
+ */
+function TextLink({
+  children,
+  href = "#",
+  arrow,
+  weight = 400,
+  color = "var(--dda-ink)",
+  style,
+  ...rest
+}) {
+  const [hover, setHover] = React.useState(false);
+  return /*#__PURE__*/React.createElement("a", _extends({
+    href: href,
+    onMouseEnter: () => setHover(true),
+    onMouseLeave: () => setHover(false),
+    style: {
+      color,
+      fontFamily: "var(--dda-font-sans)",
+      fontWeight: weight,
+      textDecoration: hover ? "underline" : "none",
+      textUnderlineOffset: "4px",
+      cursor: "pointer",
+      ...style
+    }
+  }, rest), children, arrow ? GLYPH[arrow] || "" : "");
+}
+Object.assign(__ds_scope, { TextLink });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/actions/TextLink.jsx", error: String((e && e.message) || e) }); }
+
+// components/brand/Wordmark.jsx
+try { (() => {
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/**
+ * Wordmark — the recurring "DERYA DILARA" text signature used in the header.
+ * The stylised DILARA logo mark is a fixed image asset (assets/logo/), not type.
+ */
+function Wordmark({
+  text = "DERYA DILARA",
+  href,
+  as = "span",
+  size = 17,
+  color = "var(--dda-ink)",
+  style,
+  ...rest
+}) {
+  const Tag = href ? "a" : as;
+  return /*#__PURE__*/React.createElement(Tag, _extends({
+    href: href,
+    style: {
+      fontFamily: "var(--dda-font-sans)",
+      fontWeight: 700,
+      fontSize: size,
+      letterSpacing: "-0.7px",
+      lineHeight: 1.2,
+      color,
+      textDecoration: "none",
+      ...style
+    }
+  }, rest), text);
+}
+Object.assign(__ds_scope, { Wordmark });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/brand/Wordmark.jsx", error: String((e && e.message) || e) }); }
+
+// components/content/CVList.jsx
+try { (() => {
+/** CVList — the "A little background" list: hairline-ruled rows, title + muted detail. */
+function CVList({
+  items = [],
+  style
+}) {
+  return /*#__PURE__*/React.createElement("ul", {
+    style: {
+      listStyle: "none",
+      margin: 0,
+      padding: 0,
+      ...style
+    }
+  }, items.map((it, i) => /*#__PURE__*/React.createElement("li", {
+    key: i,
+    style: {
+      borderBottom: "1px solid var(--dda-rule-cv)",
+      padding: i === 0 ? "0 0 18px" : "18px 0",
+      display: "grid",
+      gap: 6
+    }
+  }, /*#__PURE__*/React.createElement("strong", {
+    style: {
+      fontSize: 16,
+      fontWeight: 500,
+      fontFamily: "var(--dda-font-sans)"
+    }
+  }, it.title), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 14,
+      color: "var(--dda-muted)",
+      fontFamily: "var(--dda-font-sans)"
+    }
+  }, it.detail))));
+}
+Object.assign(__ds_scope, { CVList });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/content/CVList.jsx", error: String((e && e.message) || e) }); }
+
+// components/content/GalleryTile.jsx
+try { (() => {
+/**
+ * GalleryTile — an image tile for the scattered opening gallery.
+ * Caption fades in on hover/focus; image gains a touch of saturation.
+ */
+function GalleryTile({
+  src,
+  alt = "",
+  title,
+  meta = "View more ↗",
+  href = "#",
+  ratio,
+  style
+}) {
+  const [hover, setHover] = React.useState(false);
+  return /*#__PURE__*/React.createElement("a", {
+    href: href,
+    onMouseEnter: () => setHover(true),
+    onMouseLeave: () => setHover(false),
+    onFocus: () => setHover(true),
+    onBlur: () => setHover(false),
+    style: {
+      position: "relative",
+      display: "block",
+      minWidth: 0,
+      height: "100%",
+      aspectRatio: ratio,
+      overflow: "hidden",
+      ...style
+    }
+  }, /*#__PURE__*/React.createElement("img", {
+    src: src,
+    alt: alt,
+    style: {
+      width: "100%",
+      height: "100%",
+      objectFit: "cover",
+      display: "block",
+      filter: hover ? "saturate(1.08)" : "none",
+      transition: "filter .2s"
+    }
+  }), title && /*#__PURE__*/React.createElement("span", {
+    style: {
+      position: "absolute",
+      left: 0,
+      right: 0,
+      bottom: 0,
+      background: "var(--dda-caption-bg)",
+      color: "#111",
+      padding: "10px 8px",
+      opacity: hover ? 1 : 0,
+      transition: "opacity .2s",
+      lineHeight: 1.15,
+      fontSize: 12,
+      fontFamily: "var(--dda-font-sans)"
+    }
+  }, /*#__PURE__*/React.createElement("strong", {
+    style: {
+      display: "block",
+      fontWeight: 700,
+      marginBottom: 5
+    }
+  }, title), /*#__PURE__*/React.createElement("span", null, meta)));
+}
+Object.assign(__ds_scope, { GalleryTile });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/content/GalleryTile.jsx", error: String((e && e.message) || e) }); }
+
+// components/content/ProjectRow.jsx
+try { (() => {
+/**
+ * ProjectRow — a "Selected work" story: image on one side, copy on the other.
+ * Alternate sides down the page with the `reverse` prop.
+ */
+function ProjectRow({
+  id,
+  kicker,
+  title,
+  children,
+  src,
+  alt = "",
+  caption,
+  reverse = false,
+  style
+}) {
+  return /*#__PURE__*/React.createElement("article", {
+    id: id,
+    style: {
+      display: "grid",
+      gridTemplateColumns: "1fr 1.18fr",
+      gap: "9%",
+      padding: "80px 0",
+      borderBottom: "1px solid var(--dda-rule-soft)",
+      alignItems: "center",
+      ...style
+    }
+  }, /*#__PURE__*/React.createElement("figure", {
+    style: {
+      margin: 0,
+      order: reverse ? 2 : 0
+    }
+  }, /*#__PURE__*/React.createElement("img", {
+    src: src,
+    alt: alt,
+    style: {
+      width: "100%",
+      aspectRatio: 1.14,
+      objectFit: "cover",
+      display: "block"
+    }
+  }), caption && /*#__PURE__*/React.createElement("figcaption", {
+    style: {
+      fontSize: 11,
+      color: "var(--dda-muted)",
+      marginTop: 10,
+      fontFamily: "var(--dda-font-sans)"
+    }
+  }, caption)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 440
+    }
+  }, kicker && /*#__PURE__*/React.createElement("p", {
+    style: {
+      textTransform: "uppercase",
+      letterSpacing: "0.09em",
+      fontSize: 11,
+      fontWeight: 700,
+      margin: 0,
+      fontFamily: "var(--dda-font-sans)"
+    }
+  }, kicker), /*#__PURE__*/React.createElement("h3", {
+    style: {
+      fontFamily: "var(--dda-font-serif)",
+      fontWeight: 400,
+      fontSize: "clamp(33px,3.7vw,52px)",
+      letterSpacing: "-0.025em",
+      lineHeight: 1.03,
+      margin: "18px 0 22px"
+    }
+  }, title), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 17,
+      lineHeight: 1.6,
+      fontFamily: "var(--dda-font-sans)"
+    }
+  }, children)));
+}
+Object.assign(__ds_scope, { ProjectRow });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/content/ProjectRow.jsx", error: String((e && e.message) || e) }); }
+
+// components/navigation/Menu.jsx
+try { (() => {
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/**
+ * Menu — the header disclosure nav. A "Menu +" toggle reveals a small
+ * white popover of links; toggle shows "−" when open. Closes on link click.
+ */
+function Menu({
+  items = [],
+  label = "Menu",
+  align = "right",
+  style,
+  ...rest
+}) {
+  const [open, setOpen] = React.useState(false);
+  return /*#__PURE__*/React.createElement("div", _extends({
+    style: {
+      position: "relative",
+      minWidth: 84,
+      textAlign: align,
+      ...style
+    }
+  }, rest), /*#__PURE__*/React.createElement("button", {
+    onClick: () => setOpen(o => !o),
+    style: {
+      all: "unset",
+      cursor: "pointer",
+      fontFamily: "var(--dda-font-sans)",
+      fontWeight: 700,
+      fontSize: 17,
+      color: "var(--dda-ink)"
+    }
+  }, label, open ? " −" : " +"), open && /*#__PURE__*/React.createElement("nav", {
+    "aria-label": "Portfolio",
+    style: {
+      position: "absolute",
+      [align]: 0,
+      top: 40,
+      width: 220,
+      padding: 24,
+      background: "#fff",
+      boxShadow: "var(--dda-shadow-pop)",
+      display: "grid",
+      gap: 15,
+      textAlign: "left",
+      zIndex: 5
+    }
+  }, items.map((it, i) => /*#__PURE__*/React.createElement("a", {
+    key: i,
+    href: it.href || "#",
+    onClick: () => setOpen(false),
+    style: {
+      color: "var(--dda-ink)",
+      textDecoration: "none",
+      fontFamily: "var(--dda-font-sans)",
+      fontSize: 16
+    }
+  }, it.label))));
+}
+Object.assign(__ds_scope, { Menu });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/navigation/Menu.jsx", error: String((e && e.message) || e) }); }
+
+// components/text/Eyebrow.jsx
+try { (() => {
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/** Eyebrow — the small uppercase editorial label above headings. */
+function Eyebrow({
+  children,
+  as = "p",
+  color = "var(--dda-ink)",
+  style,
+  ...rest
+}) {
+  const Tag = as;
+  return /*#__PURE__*/React.createElement(Tag, _extends({
+    style: {
+      textTransform: "uppercase",
+      letterSpacing: "0.09em",
+      fontSize: 11,
+      fontWeight: 700,
+      fontFamily: "var(--dda-font-sans)",
+      margin: 0,
+      color,
+      ...style
+    }
+  }, rest), children);
+}
+Object.assign(__ds_scope, { Eyebrow });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/text/Eyebrow.jsx", error: String((e && e.message) || e) }); }
+
+// components/content/SectionHead.jsx
+try { (() => {
+/** SectionHead — a serif H2 with an optional right-aligned note, underlined by a hairline rule. */
+function SectionHead({
+  title,
+  note,
+  id,
+  style
+}) {
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      alignItems: "baseline",
+      justifyContent: "space-between",
+      gap: 24,
+      paddingBottom: 20,
+      borderBottom: "1px solid var(--dda-rule-mid)",
+      ...style
+    }
+  }, /*#__PURE__*/React.createElement("h2", {
+    id: id,
+    style: {
+      fontFamily: "var(--dda-font-serif)",
+      fontWeight: 400,
+      fontSize: "clamp(36px,4vw,56px)",
+      letterSpacing: "-0.025em",
+      lineHeight: 1.1,
+      margin: 0
+    }
+  }, title), note && /*#__PURE__*/React.createElement("p", {
+    style: {
+      color: "var(--dda-muted)",
+      fontSize: 12,
+      lineHeight: 1.4,
+      margin: 0,
+      textAlign: "right",
+      fontFamily: "var(--dda-font-sans)",
+      flexShrink: 0
+    }
+  }, note));
+}
+Object.assign(__ds_scope, { SectionHead });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/content/SectionHead.jsx", error: String((e && e.message) || e) }); }
+
+// components/text/Note.jsx
+try { (() => {
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/** Note — muted small print: draft notes, captions, meta lines. */
+function Note({
+  children,
+  as = "p",
+  size = 12,
+  style,
+  ...rest
+}) {
+  const Tag = as;
+  return /*#__PURE__*/React.createElement(Tag, _extends({
+    style: {
+      color: "var(--dda-muted)",
+      fontSize: size,
+      lineHeight: 1.5,
+      fontFamily: "var(--dda-font-sans)",
+      margin: 0,
+      ...style
+    }
+  }, rest), children);
+}
+Object.assign(__ds_scope, { Note });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/text/Note.jsx", error: String((e && e.message) || e) }); }
+
+__ds_ns.TextLink = __ds_scope.TextLink;
+
+__ds_ns.Wordmark = __ds_scope.Wordmark;
+
+__ds_ns.CVList = __ds_scope.CVList;
+
+__ds_ns.GalleryTile = __ds_scope.GalleryTile;
+
+__ds_ns.ProjectRow = __ds_scope.ProjectRow;
+
+__ds_ns.SectionHead = __ds_scope.SectionHead;
+
+__ds_ns.Menu = __ds_scope.Menu;
+
+__ds_ns.Eyebrow = __ds_scope.Eyebrow;
+
+__ds_ns.Note = __ds_scope.Note;
+
+})();
+</script>
+<script>const {
+  Wordmark,
+  Menu,
+  Eyebrow,
+  Note,
+  TextLink,
+  SectionHead,
+  GalleryTile,
+  ProjectRow,
+  CVList
+} = window.DeryaDilaraDesignSystem_f49e04;
+const lines = text => text.split('\n').map((line, i) => /*#__PURE__*/React.createElement(React.Fragment, {
+  key: i
+}, i > 0 && /*#__PURE__*/React.createElement("br", null), line));
+const safeLink = href => /^(https?:\/\/|mailto:|#[a-zA-Z0-9_-]+$)/.test(href) ? href : '#dda-contact';
+function WaterName() {
+  const element = React.useRef(null),
+    mapImage = React.useRef(null),
+    displacement = React.useRef(null);
+  const engine = React.useRef(null);
+  React.useEffect(() => {
+    const canvas = document.createElement('canvas');
+    canvas.width = 128;
+    canvas.height = 64;
+    const context = canvas.getContext('2d');
+    if (!context) return;
+    const pixels = context.createImageData(canvas.width, canvas.height);
+    const media = matchMedia('(prefers-reduced-motion: reduce)');
+    const state = {
+      points: [],
+      last: null,
+      frame: 0,
+      reduced: media.matches,
+      time: 0
+    };
+    const reset = () => {
+      cancelAnimationFrame(state.frame);
+      state.frame = 0;
+      state.points = [];
+      state.last = null;
+      displacement.current?.setAttribute('scale', '0');
+    };
+    const render = time => {
+      const decay = Math.pow(.90, Math.min(3, (time - (state.time || time)) / 16.67));
+      state.time = time;
+      state.points.forEach(p => {
+        p.dx *= decay;
+        p.dy *= decay;
+      });
+      state.points = state.points.filter(p => Math.hypot(p.dx, p.dy) > .04);
+      if (!state.points.length) {
+        reset();
+        return;
+      }
+      const rect = element.current.getBoundingClientRect();
+      const radius = Math.min(55, rect.height * .48);
+      for (let y = 0; y < 64; y++) for (let x = 0; x < 128; x++) {
+        let dx = 0,
+          dy = 0;
+        for (const p of state.points) {
+          const distance = ((x / 127 * rect.width - p.x) ** 2 + (y / 63 * rect.height - p.y) ** 2) / (radius * radius);
+          if (distance > 5) continue;
+          const weight = Math.exp(-distance * 2);
+          dx += p.dx * weight;
+          dy += p.dy * weight;
+        }
+        const i = (y * 128 + x) * 4;
+        pixels.data[i] = Math.round(128 - Math.max(-22, Math.min(22, dx)) * 255 / 64);
+        pixels.data[i + 1] = Math.round(128 - Math.max(-22, Math.min(22, dy)) * 255 / 64);
+        pixels.data[i + 2] = 128;
+        pixels.data[i + 3] = 255;
+      }
+      context.putImageData(pixels, 0, 0);
+      mapImage.current?.setAttribute('href', canvas.toDataURL());
+      displacement.current?.setAttribute('scale', '64');
+      state.frame = requestAnimationFrame(render);
+    };
+    state.move = event => {
+      if (state.reduced) return;
+      const rect = element.current.getBoundingClientRect(),
+        x = event.clientX - rect.left,
+        y = event.clientY - rect.top;
+      if (state.last) {
+        const dx = Math.max(-14, Math.min(14, x - state.last.x)),
+          dy = Math.max(-14, Math.min(14, y - state.last.y));
+        if (Math.hypot(dx, dy) > .2) {
+          state.points.push({
+            x,
+            y,
+            dx: dx * .85,
+            dy: dy * .85
+          });
+          if (state.points.length > 14) state.points.shift();
+          if (!state.frame) {
+            state.time = performance.now();
+            state.frame = requestAnimationFrame(render);
+          }
+        }
+      }
+      state.last = {
+        x,
+        y
+      };
+    };
+    engine.current = state;
+    const update = () => {
+      state.reduced = media.matches;
+      if (state.reduced) reset();
+    };
+    media.addEventListener('change', update);
+    return () => {
+      reset();
+      engine.current = null;
+      media.removeEventListener('change', update);
+    };
+  }, []);
+  const move = event => engine.current?.move(event);
+  const leave = () => {
+    if (engine.current) engine.current.last = null;
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    className: "dda-name-opening"
+  }, /*#__PURE__*/React.createElement("svg", {
+    className: "dda-filter-defs",
+    "aria-hidden": "true"
+  }, /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("filter", {
+    id: "folio-water",
+    x: "0",
+    y: "0",
+    width: "100%",
+    height: "100%",
+    colorInterpolationFilters: "sRGB"
+  }, /*#__PURE__*/React.createElement("feImage", {
+    ref: mapImage,
+    x: "0",
+    y: "0",
+    width: "100%",
+    height: "100%",
+    preserveAspectRatio: "none",
+    result: "flow"
+  }), /*#__PURE__*/React.createElement("feDisplacementMap", {
+    ref: displacement,
+    in: "SourceGraphic",
+    in2: "flow",
+    scale: "0",
+    xChannelSelector: "R",
+    yChannelSelector: "G"
+  })))), /*#__PURE__*/React.createElement("h2", {
+    className: "dda-water-name",
+    ref: element,
+    onPointerEnter: move,
+    onPointerDown: move,
+    onPointerMove: move,
+    onPointerLeave: leave,
+    onPointerUp: leave,
+    onPointerCancel: leave
+  }, "Folio"));
+}
+function DiagonalGallery({
+  items
+}) {
+  const [selected, setSelected] = React.useState(Math.min(3, items.length - 1));
+  const touch = React.useRef(null);
+  const go = next => setSelected(Math.max(0, Math.min(items.length - 1, next)));
+  if (!items.length) return null;
+  return /*#__PURE__*/React.createElement("div", {
+    className: "dda-diagonal",
+    role: "region",
+    "aria-label": "Curatorial image gallery",
+    "aria-roledescription": "carousel"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "dda-diagonal-stage",
+    onTouchStart: e => {
+      touch.current = e.touches[0].clientX;
+    },
+    onTouchEnd: e => {
+      if (touch.current !== null) {
+        const delta = touch.current - e.changedTouches[0].clientX;
+        if (Math.abs(delta) > 35) go(selected + (delta > 0 ? 1 : -1));
+        touch.current = null;
+      }
+    }
+  }, items.map((item, i) => /*#__PURE__*/React.createElement("button", {
+    key: i,
+    className: 'dda-diagonal-card' + (i === selected ? ' is-current' : ''),
+    style: {
+      '--offset': i - selected,
+      zIndex: items.length - i
+    },
+    onClick: () => go(i),
+    tabIndex: Math.abs(i - selected) > 3 ? -1 : 0,
+    "aria-label": 'View image ' + (i + 1) + ': ' + item.alt,
+    "aria-current": i === selected ? 'true' : undefined,
+    "aria-hidden": Math.abs(i - selected) > 4 ? true : undefined
+  }, /*#__PURE__*/React.createElement("img", {
+    src: item.img,
+    alt: "",
+    loading: "lazy",
+    draggable: "false"
+  })))), /*#__PURE__*/React.createElement("div", {
+    className: "dda-diagonal-controls"
+  }, /*#__PURE__*/React.createElement("p", {
+    className: "dda-diagonal-caption",
+    "aria-live": "polite"
+  }, String(selected + 1).padStart(2, '0'), " / ", String(items.length).padStart(2, '0'), /*#__PURE__*/React.createElement("span", null, items[selected].alt)), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("button", {
+    onClick: () => go(selected - 1),
+    disabled: selected === 0,
+    "aria-label": "Previous image"
+  }, "\u2190"), /*#__PURE__*/React.createElement("button", {
+    onClick: () => go(selected + 1),
+    disabled: selected === items.length - 1,
+    "aria-label": "Next image"
+  }, "\u2192"))), /*#__PURE__*/React.createElement("input", {
+    className: "dda-gallery-range",
+    type: "range",
+    min: "0",
+    max: items.length - 1,
+    value: selected,
+    onChange: e => go(Number(e.target.value)),
+    "aria-label": "Browse curatorial images",
+    "aria-valuetext": 'Image ' + (selected + 1) + ' of ' + items.length
+  }));
+}
+function ProjectSpinner({
+  projects
+}) {
+  const dialog = React.useRef(null),
+    trigger = React.useRef(null),
+    stage = React.useRef(null);
+  const [paused, setPaused] = React.useState(false),
+    [visible, setVisible] = React.useState(false),
+    [open, setOpen] = React.useState(false);
+  const pictures = projects.filter(project => project.img);
+  const cards = pictures.length ? Array.from({
+    length: Math.max(8, pictures.length)
+  }, (_, i) => pictures[i % pictures.length]) : [];
+  React.useEffect(() => {
+    if (!('IntersectionObserver' in window)) {
+      setVisible(true);
+      return;
+    }
+    const observer = new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting));
+    if (stage.current) observer.observe(stage.current);
+    return () => observer.disconnect();
+  }, []);
+  React.useEffect(() => {
+    if (!open) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, [open]);
+  const show = () => {
+    dialog.current.showModal();
+    setOpen(true);
+  };
+  const close = () => dialog.current.close();
+  const visit = (event, project) => {
+    event.preventDefault();
+    close();
+    requestAnimationFrame(() => document.getElementById(project.id)?.scrollIntoView({
+      behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+      block: 'start'
+    }));
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    className: "dda-project-spinner",
+    ref: stage
+  }, /*#__PURE__*/React.createElement("button", {
+    ref: trigger,
+    type: "button",
+    className: "dda-spinner-open",
+    onClick: show,
+    "aria-haspopup": "dialog",
+    "aria-controls": "dda-all-projects",
+    "aria-label": "Open all projects"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "dda-spinner-scene",
+    "aria-hidden": "true"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "dda-spinner-axis"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "dda-spinner-wheel",
+    style: {
+      animationPlayState: paused || !visible || open ? 'paused' : 'running'
+    }
+  }, cards.map((project, i) => /*#__PURE__*/React.createElement("span", {
+    className: "dda-spinner-card",
+    key: i,
+    style: {
+      transform: `rotateX(${i * 360 / cards.length}deg) translateY(-68px)`
+    }
+  }, /*#__PURE__*/React.createElement("img", {
+    src: project.img,
+    alt: "",
+    loading: "lazy",
+    draggable: "false"
+  })))))), /*#__PURE__*/React.createElement("span", {
+    className: "dda-spinner-label"
+  }, "All projects (", projects.length, ") ", /*#__PURE__*/React.createElement("span", {
+    "aria-hidden": "true"
+  }, "\u2197"))), cards.length > 0 && /*#__PURE__*/React.createElement("button", {
+    type: "button",
+    className: "dda-spinner-pause",
+    "aria-pressed": paused,
+    onClick: () => setPaused(!paused)
+  }, paused ? 'Resume rotation' : 'Pause rotation'), /*#__PURE__*/React.createElement("dialog", {
+    ref: dialog,
+    id: "dda-all-projects",
+    className: "dda-project-dialog",
+    "aria-labelledby": "dda-all-projects-title",
+    onClose: () => {
+      setOpen(false);
+      trigger.current?.focus({
+        preventScroll: true
+      });
+    },
+    onClick: event => {
+      if (event.target === dialog.current) {
+        const rect = dialog.current.getBoundingClientRect();
+        if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) close();
+      }
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "dda-dialog-heading"
+  }, /*#__PURE__*/React.createElement("h2", {
+    id: "dda-all-projects-title"
+  }, "All projects"), /*#__PURE__*/React.createElement("button", {
+    type: "button",
+    onClick: close,
+    autoFocus: true,
+    "aria-label": "Close all projects"
+  }, "Close \xD7")), /*#__PURE__*/React.createElement("div", {
+    className: "dda-project-index"
+  }, projects.map(project => /*#__PURE__*/React.createElement("a", {
+    key: project.id,
+    href: '#' + project.id,
+    onClick: event => visit(event, project)
+  }, project.img && /*#__PURE__*/React.createElement("img", {
+    src: project.img,
+    alt: project.title,
+    loading: "lazy"
+  }), /*#__PURE__*/React.createElement("p", {
+    className: "dda-index-kicker"
+  }, project.kicker), /*#__PURE__*/React.createElement("h3", null, project.title, " ", /*#__PURE__*/React.createElement("span", {
+    "aria-hidden": "true"
+  }, "\u2197")), project.caption && /*#__PURE__*/React.createElement("p", {
+    className: "dda-index-caption"
+  }, project.caption))))));
+}
+function Services({
+  links
+}) {
+  const email = links.find(link => link.href.startsWith('mailto:'))?.href;
+  const packages = [{
+    title: 'Career Story / Creative Portfolio',
+    price: '650',
+    featured: true,
+    description: 'Your experience, beautifully told. A one-page creative portfolio that turns your CV into a clear, personal narrative.',
+    items: ['Introductory call and up to 600 words of CV-to-web storytelling', 'Image selection, up to six sections and three featured projects', 'Mobile layout, contact links and a downloadable CV link']
+  }, {
+    title: 'Simple Landing Page',
+    price: '350',
+    description: 'A considered home for your work, service or next idea.',
+    items: ['One scrolling page with up to four sections', 'Your supplied words and images, with light editing', 'Mobile layout and contact links']
+  }, {
+    title: 'Editorial & Visual Refresh',
+    price: '250',
+    description: 'A fresh eye on the words, images and flow of your existing one-page website.',
+    items: ['Editing and refinement of existing copy', 'Selection and sequencing of your supplied images', 'Layout refinements within your existing website']
+  }, {
+    title: 'Digital Curation',
+    price: '200',
+    description: 'Bring your images together into a coherent visual story.',
+    items: ['Selection of up to 15 client-supplied images', 'Suggested sequence and short captions', 'A curated selection for your website or digital publication']
+  }];
+  return /*#__PURE__*/React.createElement("section", {
+    className: "dda-services",
+    id: "dda-services",
+    "aria-labelledby": "dda-services-title"
+  }, /*#__PURE__*/React.createElement(Eyebrow, null, "Creative & curatorial services"), /*#__PURE__*/React.createElement("h2", {
+    id: "dda-services-title"
+  }, "Your experience,", /*#__PURE__*/React.createElement("br", null), "beautifully told."), /*#__PURE__*/React.createElement("p", {
+    className: "dda-services-intro"
+  }, "Words, images and an editorial eye. Personal websites, career stories and digital curation, shaped around what makes your work yours."), /*#__PURE__*/React.createElement("div", {
+    className: "dda-service-grid"
+  }, packages.map(service => /*#__PURE__*/React.createElement("article", {
+    key: service.title,
+    className: 'dda-service-card' + (service.featured ? ' dda-service-featured' : '')
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "dda-service-top"
+  }, /*#__PURE__*/React.createElement("h3", null, service.title), /*#__PURE__*/React.createElement("p", {
+    className: "dda-service-price"
+  }, "$", service.price, /*#__PURE__*/React.createElement("span", null, "AUD \xB7 one-off"))), service.featured && /*#__PURE__*/React.createElement("p", {
+    className: "dda-service-offer"
+  }, "Introductory offer: $495 AUD for the first three clients."), /*#__PURE__*/React.createElement("p", null, service.description), /*#__PURE__*/React.createElement("ul", null, service.items.map(item => /*#__PURE__*/React.createElement("li", {
+    key: item
+  }, item))), /*#__PURE__*/React.createElement("a", {
+    className: "dda-service-enquiry",
+    href: email ? email.split('?')[0] + '?subject=' + encodeURIComponent('Enquiry: ' + service.title) : '#dda-contact'
+  }, "Enquire about ", service.featured ? 'a Career Story' : service.title.toLowerCase(), " ", /*#__PURE__*/React.createElement("span", {
+    "aria-hidden": "true"
+  }, "\u2197"))))), /*#__PURE__*/React.createElement("div", {
+    className: "dda-service-details"
+  }, /*#__PURE__*/React.createElement("p", null, "Each package includes one consolidated revision round. Website builds use an established layout personalised through typography, colour, imagery and storytelling. You supply your CV or project information and images."), /*#__PURE__*/React.createElement("p", null, "Domain, hosting and paid template costs are separate, with accounts in your name. Additional writing, custom animation, branding and extra pages are quoted separately. A 50% deposit books the project; the balance is due before launch or final delivery.")));
+}
+function Portfolio({
+  content
+}) {
+  const {
+    gallery: TILES,
+    projects: PROJECTS,
+    threads: THREADS,
+    cv: CV,
+    curated: CURATED
+  } = content;
+  const scrollTo = (e, href) => {
+    e.preventDefault();
+    const el = document.querySelector(href);
+    if (el) el.scrollIntoView({
+      behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+      block: "start"
+    });
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    id: "dda-portfolio"
+  }, /*#__PURE__*/React.createElement("header", {
+    className: "dda-header",
+    id: "dda-top"
+  }, /*#__PURE__*/React.createElement("a", {
+    className: "dda-brand",
+    href: "#dda-top",
+    onClick: e => scrollTo(e, "#dda-top")
+  }, /*#__PURE__*/React.createElement(Wordmark, {
+    text: "DILARA"
+  })), /*#__PURE__*/React.createElement(Menu, {
+    items: [{
+      label: "Selected work",
+      href: "#dda-work"
+    }, {
+      label: "Curatorial",
+      href: "#dda-curated"
+    }, {
+      label: "About",
+      href: "#dda-about"
+    }, {
+      label: "Services",
+      href: "#dda-services"
+    }, {
+      label: "CV",
+      href: "#dda-cv"
+    }, {
+      label: "Contact",
+      href: "#dda-contact"
+    }]
+  })), /*#__PURE__*/React.createElement("main", null, /*#__PURE__*/React.createElement(WaterName, null), /*#__PURE__*/React.createElement("section", {
+    className: "dda-opening",
+    "aria-label": "Selected project gallery"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "dda-grid"
+  }, TILES.filter(t => t.img).map((t, i) => /*#__PURE__*/React.createElement(GalleryTile, {
+    key: i,
+    src: t.img,
+    title: t.title,
+    href: safeLink(t.href),
+    alt: t.alt,
+    style: {
+      gridArea: t.c
+    }
+  }))), /*#__PURE__*/React.createElement("div", {
+    className: "dda-gallery-foot"
+  }, /*#__PURE__*/React.createElement(TextLink, {
+    href: "#dda-work",
+    arrow: "up-right",
+    weight: 700,
+    onClick: e => scrollTo(e, "#dda-work")
+  }, "Selected work"), /*#__PURE__*/React.createElement(Note, {
+    style: {
+      maxWidth: 340
+    }
+  }, content.openingNote))), /*#__PURE__*/React.createElement("section", {
+    className: "dda-about",
+    id: "dda-about"
+  }, /*#__PURE__*/React.createElement(Eyebrow, null, content.aboutLabel), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", null, lines(content.aboutHeadline)), /*#__PURE__*/React.createElement("div", {
+    className: "dda-threads"
+  }, THREADS.map(({
+    title: t,
+    detail: d
+  }) => /*#__PURE__*/React.createElement("div", {
+    key: t,
+    className: "dda-thread"
+  }, /*#__PURE__*/React.createElement("h3", null, t), /*#__PURE__*/React.createElement("p", null, d)))))), /*#__PURE__*/React.createElement("section", {
+    className: "dda-blogs",
+    id: "dda-blogs"
+  }, /*#__PURE__*/React.createElement(SectionHead, {
+    title: "DDA Globe",
+    note: "Document Design Act"
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "dda-blog-panels"
+  }, TILES.slice(0, 3).map((tile, i) => {
+    const handle = i === 0 ? 'mecmua__' : i === 1 ? 'bishbuckler' : 'bondi.bish';
+    const link = content.links.find(link => link.href.includes('instagram.com/' + handle));
+    return /*#__PURE__*/React.createElement("a", {
+      className: "dda-blog-panel",
+      key: i,
+      href: link ? safeLink(link.href) : '#dda-contact'
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "dda-blog-art"
+    }, tile.img ? /*#__PURE__*/React.createElement("img", {
+      src: tile.img,
+      alt: tile.alt || tile.title,
+      loading: "lazy"
+    }) : /*#__PURE__*/React.createElement("span", null, tile.title)), /*#__PURE__*/React.createElement("div", {
+      className: "dda-blog-label"
+    }, /*#__PURE__*/React.createElement("span", null, tile.title), /*#__PURE__*/React.createElement("span", {
+      "aria-hidden": "true"
+    }, "\u2197")));
+  }))), /*#__PURE__*/React.createElement("section", {
+    className: "dda-work",
+    id: "dda-work"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "dda-work-intro"
+  }, /*#__PURE__*/React.createElement(SectionHead, {
+    title: content.workTitle,
+    note: lines(content.workNote)
+  }), /*#__PURE__*/React.createElement(ProjectSpinner, {
+    projects: PROJECTS
+  })), PROJECTS.map((p, i) => /*#__PURE__*/React.createElement(ProjectRow, {
+    key: p.id,
+    id: p.id,
+    kicker: p.kicker,
+    title: p.title,
+    src: p.img,
+    caption: p.caption,
+    reverse: i % 2 === 1
+  }, /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: "0 0 26px"
+    }
+  }, p.body), /*#__PURE__*/React.createElement("div", {
+    className: "dda-points"
+  }, p.points.map(({
+    title: t,
+    detail: d
+  }) => /*#__PURE__*/React.createElement("div", {
+    key: t,
+    className: "dda-point"
+  }, /*#__PURE__*/React.createElement("strong", null, t), /*#__PURE__*/React.createElement(Note, {
+    size: 14
+  }, d))))))), /*#__PURE__*/React.createElement("section", {
+    className: "dda-curated",
+    id: "dda-curated"
+  }, /*#__PURE__*/React.createElement(SectionHead, {
+    title: content.curatedTitle,
+    note: lines(content.curatedNote)
+  }), /*#__PURE__*/React.createElement(DiagonalGallery, {
+    items: CURATED
+  })), /*#__PURE__*/React.createElement("section", {
+    className: "dda-cv",
+    id: "dda-cv"
+  }, /*#__PURE__*/React.createElement("h2", null, content.cvTitle), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(CVList, {
+    items: CV
+  }))), /*#__PURE__*/React.createElement(Services, {
+    links: content.links
+  }), /*#__PURE__*/React.createElement("section", {
+    className: "dda-contact",
+    id: "dda-contact"
+  }, /*#__PURE__*/React.createElement(Eyebrow, null, "Contact"), /*#__PURE__*/React.createElement("h2", {
+    className: "dda-contact-h"
+  }, lines(content.contactHeadline)), /*#__PURE__*/React.createElement("p", null, content.contactNote), /*#__PURE__*/React.createElement("div", {
+    className: "dda-contact-links"
+  }, content.links.map((link, i) => /*#__PURE__*/React.createElement(TextLink, {
+    key: i,
+    href: safeLink(link.href)
+  }, link.label))), /*#__PURE__*/React.createElement("footer", {
+    className: "dda-footer"
+  }, /*#__PURE__*/React.createElement("span", null, content.copyright), /*#__PURE__*/React.createElement(TextLink, {
+    href: "#dda-top",
+    arrow: "up",
+    onClick: e => scrollTo(e, "#dda-top")
+  }, "Back to top"), /*#__PURE__*/React.createElement("span", null, content.footerNote)))));
+}
+window.Portfolio = Portfolio;</script>
+<script id="folio-data" type="application/json">{
+  "gallery": [
+    {
+      "c": "1 / 1",
+      "title": "Mecmua - Mistik Muze",
+      "img": "https://deryadilaraa.github.io/D/assets/images/1-untitled.png",
+      "alt": "Mecmua - Mistik Muze",
+      "href": "#Mecmua - Mistik Muze"
+    },
+    {
+      "c": "1 / 4",
+      "title": "Bish Bucker - Mr Bish Buckler",
+      "alt": "Bish Bucker - Mr Bish Buckler",
+      "href": "#Bish Bucker - Mr Bish Buckler"
+    },
+    {
+      "c": "1 / 5",
+      "title": "Bondi Bish - For all the Bishes!",
+      "alt": "Bondi Bish - For all the Bishes!",
+      "href": "#Bondi Bish - For all the Bishes!"
+    },
+    {
+      "c": "1 / 8",
+      "title": "Document. Design. Act.",
+      "img": "https://deryadilaraa.github.io/D/assets/images/4bd2e075ca4e6a4a8341b44c7878d2f1.jpg",
+      "alt": "Document. Design. Act.",
+      "href": "#Document. Design. Act."
+    },
+    {
+      "c": "2 / 1",
+      "title": "But most of all, we need passion.",
+      "img": "https://deryadilaraa.github.io/D/assets/images/1ea0f0d2b3befe40c68bcb5ae44cda86.jpg",
+      "alt": "But most of all, we need passion.",
+      "href": "#But most of all, we need passion."
+    },
+    {
+      "c": "2 / 2",
+      "title": "DDA Globe",
+      "img": "https://deryadilaraa.github.io/D/assets/images/82d65d46ab8cc83f9b072d34a94b2397.jpg",
+      "alt": "Red tiled outdoor shower surrounded by greenery",
+      "href": "#dda-globe"
+    },
+    {
+      "c": "2 / 8",
+      "title": "Collaboration",
+      "img": "https://deryadilaraa.github.io/D/assets/images/69c9363fb292d1ca15c7289e2356b964.jpg",
+      "alt": "Sculptural green and orange wall mounted seat",
+      "href": "#dda-collab"
+    },
+    {
+      "c": "2 / 9",
+      "title": "Art & place",
+      "img": "https://deryadilaraa.github.io/D/assets/images/44f676b6fa27e9341fa1b402c49be582.jpg",
+      "alt": "Stone bench beneath an arch with garden planting",
+      "href": "#dda-place"
+    },
+    {
+      "c": "3 / 2",
+      "title": "Digital stories",
+      "img": "https://deryadilaraa.github.io/D/assets/images/82df26e7aa32096063817709e6494cca.jpg",
+      "alt": "Ornate gold mosaics around an arched window",
+      "href": "#dda-stories"
+    },
+    {
+      "c": "4 / 1",
+      "title": "DDA Globe",
+      "img": "https://deryadilaraa.github.io/D/assets/images/37abdf86a678be72e1daa8201f08235a.webp",
+      "alt": "Pale stone steps bordered by lush planting",
+      "href": "#dda-globe"
+    },
+    {
+      "c": "4 / 6",
+      "title": "Collaboration",
+      "img": "https://deryadilaraa.github.io/D/assets/images/1a22f5247a0348251fa2967b8efccb78.jpg",
+      "alt": "Botanical mural across a wall",
+      "href": "#dda-collab"
+    },
+    {
+      "c": "4 / 9",
+      "title": "Art & place",
+      "img": "https://deryadilaraa.github.io/D/assets/images/0f8fa7a27f0e143fbae6f3995ce63fb8.jpg",
+      "alt": "Red tiled pool room with glowing round lights",
+      "href": "#dda-place"
+    }
+  ],
+  "projects": [
+    {
+      "id": "dda-globe",
+      "kicker": "01 / Independent practice",
+      "title": "DDA Globe",
+      "caption": "Visual reference / curated image",
+      "img": "https://deryadilaraa.github.io/D/assets/images/6d7de8acb27fe47e4181f4d4bb58c3a1.jpg",
+      "body": "Document Design Act is my independent creative practice. It grew from three ongoing Instagram blogs — a place for visual curiosity, curation and stories that connect words with images.",
+      "points": [
+        {
+          "title": "Visual Curation",
+          "detail": "Curated imagery across three active blogs."
+        },
+        {
+          "title": "Word & Image",
+          "detail": "Stories bridging text and photography."
+        }
+      ]
+    },
+    {
+      "id": "dda-stories",
+      "kicker": "02 / Digital storytelling",
+      "title": "Stories that make space for people",
+      "caption": "Visual reference / curated image",
+      "img": "https://deryadilaraa.github.io/D/assets/images/08bd301b9ee1403841808c90d446efcf.jpg",
+      "body": "My digital storytelling work includes the University of Melbourne and galleries. I look for the human detail — the observation, voice or image that gives a story its meaning.",
+      "points": [
+        {
+          "title": "University of Melbourne",
+          "detail": "Institutional storytelling with a human lens."
+        },
+        {
+          "title": "Gallery Projects",
+          "detail": "Narratives shaped by art and audience."
+        }
+      ]
+    },
+    {
+      "id": "dda-collab",
+      "kicker": "03 / Creative collaboration",
+      "title": "A dialogue with design",
+      "caption": "Visual reference / curated image",
+      "img": "https://deryadilaraa.github.io/D/assets/images/4bd2e075ca4e6a4a8341b44c7878d2f1.jpg",
+      "body": "Collaborations with international fashion and jewellery designers bring together my interests in identity, craft and visual storytelling.",
+      "points": [
+        {
+          "title": "Identity",
+          "detail": "Exploring how design expresses who we are."
+        },
+        {
+          "title": "Craft",
+          "detail": "The care and intention behind every detail."
+        },
+        {
+          "title": "Story",
+          "detail": "Visual narratives that linger beyond the image."
+        }
+      ]
+    },
+    {
+      "id": "dda-place",
+      "kicker": "04 / Art & place",
+      "title": "Beyond the screen",
+      "caption": "Visual reference / curated image",
+      "img": "https://deryadilaraa.github.io/D/assets/images/37abdf86a678be72e1daa8201f08235a.webp",
+      "body": "A place for public art and installation projects — stories encountered in shared spaces, through colour, form and human connection.",
+      "points": [
+        {
+          "title": "Public Space",
+          "detail": "Art that belongs to everyone who passes through."
+        },
+        {
+          "title": "Colour & Form",
+          "detail": "Visual language that speaks without words."
+        },
+        {
+          "title": "Human Connection",
+          "detail": "Stories that emerge between people and place."
+        }
+      ]
+    }
+  ],
+  "threads": [
+    {
+      "title": "Paying Attention",
+      "detail": "I notice what people say — and what they leave unsaid. Those quiet human details are where the work begins."
+    },
+    {
+      "title": "Connecting Threads",
+      "detail": "Across independent creative work and government communications, I bring a rare dual perspective to every brief."
+    },
+    {
+      "title": "Chasing Warmth",
+      "detail": "I’m drawn to beauty that lingers and colour that moves us — the kind of feeling that stays long after the page turns."
+    }
+  ],
+  "cv": [
+    {
+      "title": "Independent Practice",
+      "detail": "DDA Globe / Document Design Act — ongoing creative practice spanning curation, writing and visual storytelling."
+    },
+    {
+      "title": "Communications & Storytelling",
+      "detail": "Experience across government, creative and cultural contexts — from agencies to institutions."
+    },
+    {
+      "title": "Education",
+      "detail": "Deakin University & VCA — qualification titles and dates to confirm."
+    },
+    {
+      "title": "Selected Recognition",
+      "detail": "Awards, grants and publication details to be added."
+    }
+  ],
+  "curated": [
+    {
+      "img": "https://deryadilaraa.github.io/D/assets/images/08bd301b9ee1403841808c90d446efcf.jpg",
+      "alt": "Floral mural being painted in an interior"
+    },
+    {
+      "img": "https://deryadilaraa.github.io/D/assets/images/0f8fa7a27f0e143fbae6f3995ce63fb8.jpg",
+      "alt": "Red tiled pool room with glowing round lights"
+    },
+    {
+      "img": "https://deryadilaraa.github.io/D/assets/images/16dea0300f2ecec6aacd67f8e3808c23.jpg",
+      "alt": "Minimal interior with a dark timber counter"
+    },
+    {
+      "img": "https://deryadilaraa.github.io/D/assets/images/1a22f5247a0348251fa2967b8efccb78.jpg",
+      "alt": "Botanical mural across a wall"
+    },
+    {
+      "img": "https://deryadilaraa.github.io/D/assets/images/1d54ac9ec49e14059cb9cb39020e64d6.jpg",
+      "alt": "Ornate red and blue patterned interior"
+    },
+    {
+      "img": "https://deryadilaraa.github.io/D/assets/images/1d59edddf3cc8901dc360101a5ea871a.jpg",
+      "alt": "Carved basin beside a wall light and greenery"
+    },
+    {
+      "img": "https://deryadilaraa.github.io/D/assets/images/1ea0f0d2b3befe40c68bcb5ae44cda86.jpg",
+      "alt": "Blue vaulted ceiling with gold stars"
+    },
+    {
+      "img": "https://deryadilaraa.github.io/D/assets/images/29c6aba9ad800e99189f2b7b1c1b8396.jpg",
+      "alt": "Aged mirrored wall panels"
+    },
+    {
+      "img": "https://deryadilaraa.github.io/D/assets/images/37abdf86a678be72e1daa8201f08235a.webp",
+      "alt": "Pale stone steps bordered by lush planting"
+    },
+    {
+      "img": "https://deryadilaraa.github.io/D/assets/images/3d036c53d1f0890632fe78f5d6cbbe6d.jpg",
+      "alt": "Plant filled courtyard beside an open doorway"
+    },
+    {
+      "img": "https://deryadilaraa.github.io/D/assets/images/44f676b6fa27e9341fa1b402c49be582.jpg",
+      "alt": "Stone bench beneath an arch with garden planting"
+    },
+    {
+      "img": "https://deryadilaraa.github.io/D/assets/images/4bd2e075ca4e6a4a8341b44c7878d2f1.jpg",
+      "alt": "Sculptural brass handles on dark doors"
+    },
+    {
+      "img": "https://deryadilaraa.github.io/D/assets/images/59a12b3d9695829db78bca3b3866c17d.jpg",
+      "alt": "Marble wall mounted basin with brass taps"
+    },
+    {
+      "img": "https://deryadilaraa.github.io/D/assets/images/61a0db62df9b39f5aa1d2d81d499d562.jpg",
+      "alt": "Weathered doorway and patterned stone floor"
+    },
+    {
+      "img": "https://deryadilaraa.github.io/D/assets/images/69c9363fb292d1ca15c7289e2356b964.jpg",
+      "alt": "Sculptural green and orange wall mounted seat"
+    },
+    {
+      "img": "https://deryadilaraa.github.io/D/assets/images/6d7de8acb27fe47e4181f4d4bb58c3a1.jpg",
+      "alt": "Green tiled low table on red spherical feet"
+    },
+    {
+      "img": "https://deryadilaraa.github.io/D/assets/images/6f49bf0662e99ea7793ac71839ba66cf.jpg",
+      "alt": "Blue and gold patterned vaulted ceiling"
+    },
+    {
+      "img": "https://deryadilaraa.github.io/D/assets/images/82d65d46ab8cc83f9b072d34a94b2397.jpg",
+      "alt": "Red tiled outdoor shower surrounded by greenery"
+    },
+    {
+      "img": "https://deryadilaraa.github.io/D/assets/images/82df26e7aa32096063817709e6494cca.jpg",
+      "alt": "Ornate gold mosaics around an arched window"
+    },
+    {
+      "img": "https://deryadilaraa.github.io/D/assets/images/9b298b497c16d4169391f9783897d331.jpg",
+      "alt": "White house with terracotta roofs and trees"
+    }
+  ],
+  "openingNote": "But most of all, we need passion.",
+  "aboutLabel": "Summer soft, ocean deep.",
+  "aboutHeadline": "\"I prefer to be called Nobody.\" - Dead Man.",
+  "workTitle": "Your digital presence is your loudest whisper.",
+  "workNote": "\nMecmua - Mistik Muze\nBondi Bish - For all the Bishes!\nBish Bucker - Mr Bish Buckler\n",
+  "curatedTitle": "There is immense power in beauty.",
+  "curatedNote": "I am a mood based person.",
+  "cvTitle": "Document. Design. Act.",
+  "contactHeadline": "Every picture tells a story.",
+  "contactNote": "Connect for stories worth telling.",
+  "copyright": "© 2028 Dilara",
+  "footerNote": "it's a dilara",
+  "links": [
+    {
+      "label": "dilara@deryadilara.com",
+      "href": "mailto:dilara@deryadilara.com"
+    },
+    {
+      "label": "deryadilara.com",
+      "href": "https://www.deryadilara.com"
+    },
+    {
+      "label": "bishbuckler.com",
+      "href": "https://www.bishbuckler.com"
+    },
+    {
+      "label": "@_deryadilara_",
+      "href": "https://instagram.com/_deryadilara_"
+    },
+    {
+      "label": "@bishbuckler",
+      "href": "https://instagram.com/bishbuckler"
+    },
+    {
+      "label": "@mecmua__",
+      "href": "https://instagram.com/mecmua__"
+    },
+    {
+      "label": "@bondi.bish",
+      "href": "https://instagram.com/bondi.bish"
+    }
+  ]
+}</script><script>ReactDOM.createRoot(document.getElementById("root")).render(React.createElement(window.Portfolio,{content:JSON.parse(document.getElementById("folio-data").textContent)}));</script>
+
+
+<script id="text-overrides" type="application/json">{"#root > :nth-child(1) > :nth-child(2) > :nth-child(2) > :nth-child(1) > :nth-child(1) > :nth-child(2) > :nth-child(1)":"Summer Soft, Ocean Sea.","#root > :nth-child(1) > :nth-child(2) > :nth-child(2) > :nth-child(1) > :nth-child(1) > :nth-child(2) > :nth-child(2)":"↗","#root > :nth-child(1) > :nth-child(2) > :nth-child(2) > :nth-child(1) > :nth-child(3) > :nth-child(2) > :nth-child(2)":" ↗","#root > :nth-child(1) > :nth-child(2) > :nth-child(2) > :nth-child(1) > :nth-child(4) > :nth-child(2) > :nth-child(1)":"Deep Blue Poetry","#root > :nth-child(1) > :nth-child(2) > :nth-child(2) > :nth-child(1) > :nth-child(4) > :nth-child(2) > :nth-child(2)":" ↗","#root > :nth-child(1) > :nth-child(2) > :nth-child(2) > :nth-child(1) > :nth-child(7) > :nth-child(2) > :nth-child(1)":"What happened to all the colour?","#root > :nth-child(1) > :nth-child(2) > :nth-child(2) > :nth-child(1) > :nth-child(7) > :nth-child(2) > :nth-child(2)":" ↗","#root > :nth-child(1) > :nth-child(2) > :nth-child(5) > :nth-child(2) > :nth-child(2) > :nth-child(2)":"Poetic 84","#root > :nth-child(1) > :nth-child(2) > :nth-child(2) > :nth-child(1) > :nth-child(8) > :nth-child(2) > :nth-child(1)":"Sufi Stoic","#root > :nth-child(1) > :nth-child(2) > :nth-child(2) > :nth-child(1) > :nth-child(8) > :nth-child(2) > :nth-child(2)":" ↗","#root > :nth-child(1) > :nth-child(2) > :nth-child(2) > :nth-child(1) > :nth-child(9) > :nth-child(2) > :nth-child(1)":"She's whiskey in a teacup.","#root > :nth-child(1) > :nth-child(2) > :nth-child(2) > :nth-child(1) > :nth-child(9) > :nth-child(2) > :nth-child(2)":" ↗","#root > :nth-child(1) > :nth-child(2) > :nth-child(2) > :nth-child(1) > :nth-child(6) > :nth-child(2) > :nth-child(1)":"Star Sun","#root > :nth-child(1) > :nth-child(2) > :nth-child(2) > :nth-child(1) > :nth-child(6) > :nth-child(2) > :nth-child(2)":" ↗","#root > :nth-child(1) > :nth-child(2) > :nth-child(2) > :nth-child(1) > :nth-child(2) > :nth-child(2) > :nth-child(1)":"Leo my love ","#root > :nth-child(1) > :nth-child(2) > :nth-child(2) > :nth-child(1) > :nth-child(2) > :nth-child(2) > :nth-child(2)":" ↗","#root > :nth-child(1) > :nth-child(2) > :nth-child(2) > :nth-child(1) > :nth-child(5) > :nth-child(2) > :nth-child(1)":"Inner Library","#root > :nth-child(1) > :nth-child(2) > :nth-child(2) > :nth-child(1) > :nth-child(5) > :nth-child(2) > :nth-child(2)":" ↗","#root > :nth-child(1) > :nth-child(2) > :nth-child(2) > :nth-child(1) > :nth-child(10) > :nth-child(2) > :nth-child(1)":"mecmûa","#root > :nth-child(1) > :nth-child(2) > :nth-child(2) > :nth-child(1) > :nth-child(10) > :nth-child(2) > :nth-child(2)":" ↗","#root > :nth-child(1) > :nth-child(2) > :nth-child(2) > :nth-child(2) > :nth-child(2)":"The Deepest Ocean.","#root > :nth-child(1) > :nth-child(2) > :nth-child(3) > :nth-child(1)":"I NOTICE WHAT PEOPLE SAY — AND WHAT THEY LEAVE UNSAID. THOSE QUIET HUMAN DETAILS ARE WHERE THE STORY BEGINS.","#root > :nth-child(1) > :nth-child(2) > :nth-child(3) > :nth-child(2) > :nth-child(2) > :nth-child(1) > :nth-child(2)":"Chasing Warmth","#root > :nth-child(1) > :nth-child(2) > :nth-child(2) > :nth-child(2) > :nth-child(1)":"\"I prefer to be called Nobody.\" ↗","#root > :nth-child(1) > :nth-child(2) > :nth-child(3) > :nth-child(2) > :nth-child(1)":"There is immense power in beauty.","#root > :nth-child(1) > :nth-child(2) > :nth-child(3) > :nth-child(2) > :nth-child(2) > :nth-child(1) > :nth-child(1)":"\n","#root > :nth-child(1) > :nth-child(2) > :nth-child(3) > :nth-child(2) > :nth-child(2) > :nth-child(3) > :nth-child(1)":"\n","#root > :nth-child(1) > :nth-child(2) > :nth-child(3) > :nth-child(2) > :nth-child(2) > :nth-child(2) > :nth-child(2)":"\n","#root > :nth-child(1) > :nth-child(2) > :nth-child(3) > :nth-child(2) > :nth-child(2) > :nth-child(3) > :nth-child(2)":"I’m drawn to beauty that lingers and colour that moves us — the kind of feeling that stays long after the moment turns.","#root > :nth-child(1) > :nth-child(2) > :nth-child(4) > :nth-child(1) > :nth-child(1)":"Platforms of alternative expression","#root > :nth-child(1) > :nth-child(2) > :nth-child(4) > :nth-child(1) > :nth-child(2)":"\n","#root > :nth-child(1) > :nth-child(2) > :nth-child(4) > :nth-child(2) > :nth-child(3) > :nth-child(1) > :nth-child(1)":".","#root > :nth-child(1) > :nth-child(2) > :nth-child(4) > :nth-child(2) > :nth-child(2) > :nth-child(1) > :nth-child(1)":".","#root > :nth-child(1) > :nth-child(2) > :nth-child(4) > :nth-child(2) > :nth-child(3) > :nth-child(2) > :nth-child(1)":"Bondi Bish - For all the Bishes","#root > :nth-child(1) > :nth-child(2) > :nth-child(5) > :nth-child(1) > :nth-child(1) > :nth-child(2)":"\n.","#root > :nth-child(1) > :nth-child(2) > :nth-child(5) > :nth-child(2) > :nth-child(1) > :nth-child(2)":"\n","#root > :nth-child(1) > :nth-child(2) > :nth-child(5) > :nth-child(2) > :nth-child(2) > :nth-child(1)":"01 / FIRST, THERE WAS THE WORD","#root > :nth-child(1) > :nth-child(2) > :nth-child(5) > :nth-child(2) > :nth-child(2) > :nth-child(3) > :nth-child(1)":"...","#root > :nth-child(1) > :nth-child(2) > :nth-child(5) > :nth-child(2) > :nth-child(2) > :nth-child(3) > :nth-child(2) > :nth-child(2) > :nth-child(2)":"\n","#root > :nth-child(1) > :nth-child(2) > :nth-child(5) > :nth-child(2) > :nth-child(2) > :nth-child(3) > :nth-child(2) > :nth-child(1) > :nth-child(2)":"\n","#root > :nth-child(1) > :nth-child(2) > :nth-child(5) > :nth-child(2) > :nth-child(2) > :nth-child(3) > :nth-child(2) > :nth-child(1) > :nth-child(1)":"\n","#root > :nth-child(1) > :nth-child(2) > :nth-child(5) > :nth-child(2) > :nth-child(2) > :nth-child(3) > :nth-child(2) > :nth-child(2) > :nth-child(1)":"\n","#root > :nth-child(1) > :nth-child(2) > :nth-child(5) > :nth-child(3) > :nth-child(2) > :nth-child(1)":"02 / ART","#root > :nth-child(1) > :nth-child(2) > :nth-child(5) > :nth-child(4) > :nth-child(2) > :nth-child(1)":"03 / DIGITAL STORYTELLING","#root > :nth-child(1) > :nth-child(2) > :nth-child(5) > :nth-child(5) > :nth-child(2) > :nth-child(1)":"04 / CURATORIAL DESIGN","#root > :nth-child(1) > :nth-child(2) > :nth-child(1) > :nth-child(2)":"I am a mood based person.","#root > :nth-child(1) > :nth-child(2) > :nth-child(5) > :nth-child(3) > :nth-child(2) > :nth-child(2)":"Every picture tells a story.","#root > :nth-child(1) > :nth-child(2) > :nth-child(5) > :nth-child(3) > :nth-child(2) > :nth-child(3) > :nth-child(1)":"...","#root > :nth-child(1) > :nth-child(2) > :nth-child(5) > :nth-child(3) > :nth-child(2) > :nth-child(3) > :nth-child(2) > :nth-child(2) > :nth-child(2)":"\n","#root > :nth-child(1) > :nth-child(2) > :nth-child(5) > :nth-child(3) > :nth-child(2) > :nth-child(3) > :nth-child(2) > :nth-child(1) > :nth-child(2)":"\n","#root > :nth-child(1) > :nth-child(2) > :nth-child(5) > :nth-child(3) > :nth-child(2) > :nth-child(3) > :nth-child(2) > :nth-child(1) > :nth-child(1)":"\n","#root > :nth-child(1) > :nth-child(2) > :nth-child(5) > :nth-child(3) > :nth-child(2) > :nth-child(3) > :nth-child(2) > :nth-child(2) > :nth-child(1)":"\n","#root > :nth-child(1) > :nth-child(2) > :nth-child(5) > :nth-child(3) > :nth-child(1) > :nth-child(2)":"\n","#root > :nth-child(1) > :nth-child(2) > :nth-child(5) > :nth-child(4) > :nth-child(2) > :nth-child(2)":"Emotive.","#root > :nth-child(1) > :nth-child(2) > :nth-child(5) > :nth-child(5) > :nth-child(2) > :nth-child(2)":"Spatial & Digital","#root > :nth-child(1) > :nth-child(2) > :nth-child(6) > :nth-child(1) > :nth-child(1)":"There is deep blue poetry in my soul... can you hear it?","#root > :nth-child(1) > :nth-child(2) > :nth-child(6) > :nth-child(1) > :nth-child(2)":"\n","#root > :nth-child(1) > :nth-child(2) > :nth-child(6) > :nth-child(2) > :nth-child(2) > :nth-child(1) > :nth-child(1)":"Botanical ","#root > :nth-child(1) > :nth-child(2) > :nth-child(7) > :nth-child(2) > :nth-child(1) > :nth-child(4) > :nth-child(2)":"a","#root > :nth-child(1) > :nth-child(2) > :nth-child(7) > :nth-child(1)":"Academique","#root > :nth-child(1) > :nth-child(2) > :nth-child(7) > :nth-child(2) > :nth-child(1) > :nth-child(1) > :nth-child(1)":"1","#root > :nth-child(1) > :nth-child(2) > :nth-child(7) > :nth-child(2) > :nth-child(1) > :nth-child(2) > :nth-child(1)":"2","#root > :nth-child(1) > :nth-child(2) > :nth-child(7) > :nth-child(2) > :nth-child(1) > :nth-child(3) > :nth-child(1)":"3","#root > :nth-child(1) > :nth-child(2) > :nth-child(7) > :nth-child(2) > :nth-child(1) > :nth-child(4) > :nth-child(1)":"4","#root > :nth-child(1) > :nth-child(2) > :nth-child(7) > :nth-child(2) > :nth-child(1) > :nth-child(1) > :nth-child(2)":"a","#root > :nth-child(1) > :nth-child(2) > :nth-child(7) > :nth-child(2) > :nth-child(1) > :nth-child(2) > :nth-child(2)":"a","#root > :nth-child(1) > :nth-child(2) > :nth-child(7) > :nth-child(2) > :nth-child(1) > :nth-child(3) > :nth-child(2)":"a","#root > :nth-child(1) > :nth-child(2) > :nth-child(8) > :nth-child(4) > :nth-child(1) > :nth-child(2)":"Your experience, beautifully told. A one-page creative portfolio that turns your CV into a clear, personal narrative.","#root > :nth-child(1) > :nth-child(2) > :nth-child(8) > :nth-child(4) > :nth-child(1) > :nth-child(3)":"CV. One Page website. Career Narration. Customised following a soul story call.","#root > :nth-child(1) > :nth-child(2) > :nth-child(8) > :nth-child(4) > :nth-child(1) > :nth-child(4) > :nth-child(1)":"\n","#root > :nth-child(1) > :nth-child(2) > :nth-child(8) > :nth-child(4) > :nth-child(1) > :nth-child(4) > :nth-child(2)":" ","#root > :nth-child(1) > :nth-child(2) > :nth-child(8) > :nth-child(4) > :nth-child(1) > :nth-child(4) > :nth-child(3)":".","#root > :nth-child(1) > :nth-child(2) > :nth-child(8) > :nth-child(4) > :nth-child(2) > :nth-child(1) > :nth-child(1)":"Spatial Design","#root > :nth-child(1) > :nth-child(2) > :nth-child(8) > :nth-child(4) > :nth-child(2) > :nth-child(1) > :nth-child(2) > :nth-child(1)":"Per day ","#root > :nth-child(1) > :nth-child(2) > :nth-child(8) > :nth-child(4) > :nth-child(2) > :nth-child(3) > :nth-child(3)":"\n","#root > :nth-child(1) > :nth-child(2) > :nth-child(8) > :nth-child(4) > :nth-child(2) > :nth-child(3) > :nth-child(2)":"\n","#root > :nth-child(1) > :nth-child(2) > :nth-child(8) > :nth-child(4) > :nth-child(2) > :nth-child(3) > :nth-child(1)":"Genius Loci in Latin, means the \"spirit of a place,\" referring to a location's unique atmosphere, character, or distinctive identity.","#root > :nth-child(1) > :nth-child(2) > :nth-child(8) > :nth-child(4) > :nth-child(2) > :nth-child(2)":"Every place has a soul. Be the soul of that space. ","#root > :nth-child(1) > :nth-child(2) > :nth-child(8) > :nth-child(4) > :nth-child(3) > :nth-child(1) > :nth-child(1)":"Editorial ","#root > :nth-child(1) > :nth-child(2) > :nth-child(8) > :nth-child(4) > :nth-child(3) > :nth-child(1) > :nth-child(2) > :nth-child(1)":" ·","#root > :nth-child(1) > :nth-child(2) > :nth-child(8) > :nth-child(4) > :nth-child(4) > :nth-child(1) > :nth-child(1)":"Digital Curation (Socials / Presence)","#root > :nth-child(1) > :nth-child(2) > :nth-child(8) > :nth-child(4) > :nth-child(4) > :nth-child(1) > :nth-child(2) > :nth-child(1)":"\n","#root > :nth-child(1) > :nth-child(2) > :nth-child(8) > :nth-child(4) > :nth-child(3) > :nth-child(2)":"Y","#root > :nth-child(1) > :nth-child(2) > :nth-child(8) > :nth-child(4) > :nth-child(3) > :nth-child(3) > :nth-child(1)":".","#root > :nth-child(1) > :nth-child(2) > :nth-child(8) > :nth-child(4) > :nth-child(3) > :nth-child(3) > :nth-child(2)":".","#root > :nth-child(1) > :nth-child(2) > :nth-child(8) > :nth-child(4) > :nth-child(3) > :nth-child(3) > :nth-child(3)":".","#root > :nth-child(1) > :nth-child(2) > :nth-child(8) > :nth-child(4) > :nth-child(4) > :nth-child(2)":"Your digital presence is your loudest whisper. Make it count.","#root > :nth-child(1) > :nth-child(2) > :nth-child(9) > :nth-child(1)":"CONNECT","#root > :nth-child(1) > :nth-child(2) > :nth-child(9) > :nth-child(3)":"more","#root > :nth-child(1) > :nth-child(2) > :nth-child(9) > :nth-child(2)":"For stories worth telling."}</script>
+<script id="published-text">
+(()=>{
+const edits=JSON.parse(document.getElementById('text-overrides').textContent);
+function apply(){
+ for(const [selector,text] of Object.entries(edits)){
+  const node=document.querySelector(selector);
+  if(node && node.textContent!==text){node.textContent=text;node.style.whiteSpace='pre-line';}
+ }
+}
+new MutationObserver(apply).observe(document.getElementById('root'),{childList:true,subtree:true});
+apply();
+})();
+</script>
 </body></html>

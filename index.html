@@ -1641,4 +1641,15 @@ new MutationObserver(apply).observe(document.getElementById('root'),{childList:t
 apply();
 })();
 </script>
+<style id="folio-glass-style">
+#folio-glass{width:min(660px,calc(100vw - 36px));max-height:85dvh;overflow:auto;box-sizing:border-box;margin:auto;padding:clamp(24px,5vw,48px);border:1px solid #ffffffb3;border-radius:24px;background:rgba(250,250,250,.83);backdrop-filter:blur(24px) saturate(130%);-webkit-backdrop-filter:blur(24px) saturate(130%);box-shadow:0 24px 100px #0003;color:#171717;font-family:var(--dda-font-sans,Arial,sans-serif)}#folio-glass::backdrop{background:#10182055;backdrop-filter:blur(7px)}#folio-glass h2{font-family:var(--dda-font-serif,Georgia,serif);font-size:clamp(32px,5vw,52px);font-weight:400;line-height:1.05;margin:24px 0}#folio-glass p{font-size:17px;line-height:1.65;white-space:pre-line;margin:0}#folio-glass-close{display:block;margin-left:auto;border:1px solid #1113;border-radius:50%;width:40px;height:40px;background:#ffffffa6;font-size:24px;cursor:pointer;color:#111}#folio-glass-close:focus-visible{outline:2px solid #1547df;outline-offset:3px}
+</style>
+<dialog id="folio-glass" aria-labelledby="folio-glass-title"><button id="folio-glass-close" aria-label="Close image details">×</button><h2 id="folio-glass-title"></h2><p id="folio-glass-description"></p></dialog>
+<script id="folio-glass-script">
+(()=>{const dialog=document.getElementById('folio-glass'),title=document.getElementById('folio-glass-title'),description=document.getElementById('folio-glass-description');let opener;
+function close(){dialog.close();opener?.focus({preventScroll:true})}
+document.getElementById('folio-glass-close').onclick=close;dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)close()}});
+document.addEventListener('click',e=>{if(document.body.classList.contains('image-editing')||document.body.classList.contains('text-editing'))return;const target=e.target.closest('#dda-portfolio .dda-grid a, #dda-portfolio .dda-blog-panel, #dda-portfolio .dda-project figure, #dda-portfolio .dda-diagonal-card');if(!target)return;e.preventDefault();e.stopImmediatePropagation();const img=target.querySelector('img'),project=target.closest('.dda-project');const heading=target.querySelector('strong,.dda-blog-label')||project?.querySelector('h3');title.textContent=(heading?.textContent||img?.alt||'Selected image').replace(/↗|View more/g,'').trim()||'Selected image';const copy=project?.querySelector('.dda-project-body p, .dda-project-copy p:not(.dda-label)');description.textContent=copy?.textContent?.trim()||'More about this image coming soon.';opener=target;dialog.showModal()},true);
+})();
+</script>
 </body></html>
